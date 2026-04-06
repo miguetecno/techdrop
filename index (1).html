@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechDrop | Tecnología al Mejor Precio — Celulares, Laptops, Gaming, Audio</title>
+<meta name="description" content="Comprá tecnología al mejor precio en Argentina. Celulares Samsung, Apple, Xiaomi. Laptops, auriculares, gaming y más. Envío gratis. Precios actualizados todos los días.">
+<meta name="keywords" content="comprar celular barato argentina, mejor precio laptop argentina, auriculares bluetooth baratos, samsung galaxy precio, iphone precio argentina, smartwatch barato">
+<link rel="canonical" href="https://techdrop.vercel.app/">
+<meta property="og:title" content="TechDrop | Tecnología al Mejor Precio">
+<meta property="og:description" content="Los mejores precios en tecnología. Celulares, laptops, gaming, audio. Envío gratis.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Store","name":"TechDrop","description":"Tienda de tecnología y electrónica con los mejores precios de Argentina","url":"https://techdrop.vercel.app","priceRange":"$$","currenciesAccepted":"ARS","areaServed":"AR"}</script>
+<style>
+:root{--bg:#f5f5f0;--bg2:#ffffff;--bg3:#eeede8;--ink:#111110;--ink2:#444440;--ink3:#888882;--accent:#ff3b00;--accent2:#0052ff;--green:#00a651;--yellow:#ffd600;--border:#e0dfda;--card-shadow:0 1px 3px rgba(0,0,0,.08),0 8px 24px rgba(0,0,0,.04);--card-hover:0 4px 12px rgba(0,0,0,.12),0 20px 48px rgba(0,0,0,.08)}
+*{margin:0;padding:0;box-sizing:border-box}html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:'Outfit',sans-serif;font-size:15px;line-height:1.5}
+a{text-decoration:none;color:inherit}
+.topbar{background:var(--ink);color:#fff;font-size:12px;text-align:center;padding:8px 20px;font-weight:500;display:flex;align-items:center;justify-content:center;gap:32px}
+.topbar span{opacity:.7}.topbar strong{opacity:1}
+header{background:var(--bg2);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:200;box-shadow:0 1px 8px rgba(0,0,0,.05)}
+.header-main{display:flex;align-items:center;gap:24px;padding:14px 32px;max-width:1400px;margin:0 auto}
+.logo{font-family:'Clash Display',sans-serif;font-size:26px;font-weight:700;letter-spacing:-1px;color:var(--ink);white-space:nowrap;flex-shrink:0}
+.logo span{color:var(--accent)}
+.search-wrap{flex:1;display:flex;align-items:center;background:var(--bg3);border:2px solid transparent;border-radius:10px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.search-wrap:focus-within{border-color:var(--accent);background:#fff;box-shadow:0 0 0 4px rgba(255,59,0,.08)}
+.search-wrap input{flex:1;background:transparent;border:none;outline:none;padding:12px 16px;font-size:15px;color:var(--ink);font-family:'Outfit',sans-serif}
+.search-wrap input::placeholder{color:var(--ink3)}
+.search-btn{background:var(--accent);border:none;padding:12px 20px;cursor:pointer;font-size:18px;transition:background .2s;display:flex;align-items:center}
+.search-btn:hover{background:#e02e00}
+.header-actions{display:flex;align-items:center;gap:16px;flex-shrink:0}
+.cart-btn{background:var(--accent);color:#fff;border:none;padding:10px 20px;border-radius:8px;font-weight:600;font-size:14px;cursor:pointer;display:flex;align-items:center;gap:8px;font-family:'Outfit',sans-serif;transition:all .2s;position:relative}
+.cart-btn:hover{background:#e02e00;transform:translateY(-1px)}
+.cart-badge{position:absolute;top:-6px;right:-6px;background:var(--ink);color:#fff;border-radius:50%;width:18px;height:18px;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.nav-cats{background:var(--bg2);border-bottom:1px solid var(--border)}
+.nav-cats-inner{max-width:1400px;margin:0 auto;padding:0 32px;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.nav-cats-inner::-webkit-scrollbar{display:none}
+.nav-cat{display:flex;align-items:center;gap:7px;padding:11px 16px;font-size:13px;font-weight:500;color:var(--ink2);cursor:pointer;border-bottom:2px solid transparent;white-space:nowrap;transition:all .2s;background:none;border-left:none;border-right:none;border-top:none;font-family:'Outfit',sans-serif}
+.nav-cat:hover{color:var(--accent)}.nav-cat.active{color:var(--accent);border-bottom-color:var(--accent);font-weight:600}
+.nav-cat .cicon{font-size:16px}
+.page{max-width:1400px;margin:0 auto;padding:28px 32px;display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:start}
+.sidebar{background:var(--bg2);border:1px solid var(--border);border-radius:14px;padding:20px;position:sticky;top:120px}
+.sidebar-title{font-family:'Clash Display',sans-serif;font-size:13px;font-weight:600;text-transform:uppercase;letter-spacing:1.5px;color:var(--ink3);margin-bottom:12px;margin-top:18px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+.sidebar-title:first-child{margin-top:0}
+.sidebar-list{list-style:none;display:flex;flex-direction:column;gap:2px}
+.sidebar-list li{display:flex;align-items:center;justify-content:space-between;padding:8px 10px;border-radius:7px;cursor:pointer;font-size:13px;color:var(--ink2);transition:all .15s}
+.sidebar-list li:hover{background:var(--bg3);color:var(--ink)}.sidebar-list li.active{background:rgba(255,59,0,.07);color:var(--accent);font-weight:600}
+.sidebar-list li .count{font-size:11px;color:var(--ink3);background:var(--bg3);padding:1px 7px;border-radius:20px}
+.sidebar-list li.active .count{background:rgba(255,59,0,.12);color:var(--accent)}
+.price-inputs{display:flex;gap:8px;margin-top:8px}
+.price-inputs input{flex:1;border:1px solid var(--border);border-radius:7px;padding:8px 10px;font-size:13px;color:var(--ink);font-family:'Outfit',sans-serif;background:var(--bg3);outline:none;transition:border-color .2s}
+.price-inputs input:focus{border-color:var(--accent);background:#fff}
+.apply-btn{width:100%;margin-top:10px;background:var(--ink);color:#fff;border:none;padding:9px;border-radius:7px;font-size:13px;font-weight:600;cursor:pointer;font-family:'Outfit',sans-serif;transition:background .2s}
+.apply-btn:hover{background:var(--accent)}
+.brand-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.brand-list label{display:flex;align-items:center;gap:8px;font-size:13px;color:var(--ink2);cursor:pointer}
+.brand-list input[type=checkbox]{accent-color:var(--accent);width:14px;height:14px}
+.main-content{min-width:0}
+.hero-banner{background:linear-gradient(135deg,#111110 60%,#2a1500);border-radius:16px;padding:40px 44px;margin-bottom:28px;display:flex;align-items:center;justify-content:space-between;overflow:hidden;position:relative}
+.hero-banner::before{content:'';position:absolute;width:500px;height:500px;border-radius:50%;background:var(--accent);opacity:.08;right:-150px;top:-200px;pointer-events:none}
+.hero-badge{display:inline-flex;align-items:center;gap:6px;background:var(--accent);color:#fff;padding:4px 12px;border-radius:20px;font-size:11px;font-weight:700;letter-spacing:.5px;text-transform:uppercase;margin-bottom:12px}
+.hero-banner h1{font-family:'Clash Display',sans-serif;font-size:38px;font-weight:700;color:#fff;line-height:1.1;letter-spacing:-1px;max-width:380px;margin-bottom:12px}
+.hero-banner h1 span{color:var(--accent)}
+.hero-sub{color:rgba(255,255,255,.55);font-size:14px;margin-bottom:22px}
+.hero-cta{background:var(--accent);color:#fff;border:none;padding:13px 28px;border-radius:9px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s;display:inline-flex;align-items:center;gap:8px}
+.hero-cta:hover{background:#e02e00;transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,59,0,.35)}
+.hero-emoji{font-size:120px;position:relative;z-index:1;filter:drop-shadow(0 10px 30px rgba(0,0,0,.3))}
+.promo-strip{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+.promo-card{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:16px 18px;display:flex;align-items:center;gap:12px;cursor:pointer;transition:all .2s}
+.promo-card:hover{border-color:var(--accent);transform:translateY(-2px);box-shadow:var(--card-hover)}
+.promo-icon{font-size:28px}.promo-title{font-size:13px;font-weight:700}.promo-sub{font-size:11px;color:var(--ink3)}
+.results-bar{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}
+.results-count{font-size:14px;color:var(--ink2)}.results-count strong{color:var(--ink)}
+.sort-select{border:1px solid var(--border);background:var(--bg2);border-radius:8px;padding:8px 12px;font-size:13px;color:var(--ink);cursor:pointer;outline:none;font-family:'Outfit',sans-serif;transition:border-color .2s}
+.sort-select:focus{border-color:var(--accent)}
+.products-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px}
+.product-card{background:var(--bg2);border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:all .25s;cursor:pointer;display:flex;flex-direction:column;position:relative}
+.product-card:hover{border-color:rgba(255,59,0,.2);transform:translateY(-4px);box-shadow:var(--card-hover)}
+.product-img{aspect-ratio:1;background:var(--bg3);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.product-img .emoji{font-size:72px;transition:transform .3s;filter:drop-shadow(0 4px 12px rgba(0,0,0,.1))}
+.product-card:hover .emoji{transform:scale(1.08)}
+.wish-btn{position:absolute;top:10px;right:10px;background:white;border:1px solid var(--border);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;cursor:pointer;transition:all .2s;z-index:2;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.wish-btn:hover{background:#fff0f0;border-color:var(--accent);transform:scale(1.1)}.wish-btn.active{background:#fff0f0;color:var(--accent);border-color:var(--accent)}
+.badges{position:absolute;top:10px;left:10px;display:flex;flex-direction:column;gap:4px}
+.badge{padding:3px 8px;border-radius:5px;font-size:10px;font-weight:700;font-family:'Outfit',sans-serif;letter-spacing:.3px}
+.badge-sale{background:var(--accent);color:#fff}.badge-new{background:var(--accent2);color:#fff}.badge-top{background:var(--yellow);color:#000}.badge-free{background:var(--green);color:#fff}
+.platform-chip{position:absolute;bottom:10px;left:10px;background:rgba(255,255,255,.92);backdrop-filter:blur(4px);border:1px solid var(--border);border-radius:5px;padding:2px 8px;font-size:10px;font-weight:700;color:var(--ink2)}
+.product-body{padding:14px 14px 16px;flex:1;display:flex;flex-direction:column}
+.product-brand{font-size:11px;color:var(--ink3);text-transform:uppercase;letter-spacing:.8px;font-weight:600;margin-bottom:4px}
+.product-name{font-size:14px;font-weight:600;line-height:1.35;color:var(--ink);margin-bottom:8px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.stars{color:#f5a623;font-size:12px}.rating-row{display:flex;align-items:center;gap:5px;margin-bottom:10px}.rating-num{font-size:12px;color:var(--ink3)}
+.price-row{display:flex;align-items:flex-end;gap:7px;margin-bottom:4px}
+.price-now{font-family:'Clash Display',sans-serif;font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-.5px}
+.price-was{font-size:13px;color:var(--ink3);text-decoration:line-through}
+.price-pct{font-size:11px;font-weight:700;color:var(--accent);background:rgba(255,59,0,.08);padding:2px 6px;border-radius:4px}
+.cuotas{font-size:12px;color:var(--green);font-weight:500;margin-bottom:12px}
+.btn-add{width:100%;background:var(--ink);color:#fff;border:none;padding:11px;border-radius:8px;font-size:13px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:7px;margin-top:auto}
+.btn-add:hover{background:var(--accent);transform:translateY(-1px)}.btn-add.added{background:var(--green)}
+.modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);backdrop-filter:blur(4px);z-index:1000;display:flex;align-items:center;justify-content:center;padding:20px;opacity:0;pointer-events:none;transition:opacity .25s}
+.modal-overlay.open{opacity:1;pointer-events:all}
+.modal{background:var(--bg2);border-radius:20px;max-width:820px;width:100%;max-height:90vh;overflow-y:auto;transform:scale(.95);transition:transform .25s;box-shadow:0 24px 80px rgba(0,0,0,.3)}
+.modal-overlay.open .modal{transform:scale(1)}
+.modal-inner{display:grid;grid-template-columns:1fr 1fr}
+.modal-img-side{background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:120px;padding:40px;border-radius:20px 0 0 20px}
+.modal-info{padding:36px}
+.modal-close{float:right;background:var(--bg3);border:none;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:16px;display:flex;align-items:center;justify-content:center;transition:background .2s}
+.modal-close:hover{background:var(--border)}
+.modal-brand{font-size:12px;color:var(--ink3);text-transform:uppercase;letter-spacing:1px;font-weight:600;margin-top:8px;margin-bottom:8px}
+.modal-name{font-family:'Clash Display',sans-serif;font-size:22px;font-weight:700;line-height:1.2;margin-bottom:14px;letter-spacing:-.5px}
+.modal-price{font-family:'Clash Display',sans-serif;font-size:38px;font-weight:700;color:var(--accent);letter-spacing:-1px;margin-bottom:6px}
+.modal-cuotas{font-size:14px;color:var(--green);font-weight:500;margin-bottom:16px}
+.modal-desc{font-size:13px;color:var(--ink2);line-height:1.6;margin-bottom:20px}
+.modal-specs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:24px}
+.spec{background:var(--bg3);padding:10px 12px;border-radius:8px}
+.spec-key{font-size:10px;color:var(--ink3);text-transform:uppercase;letter-spacing:.8px;font-weight:600;margin-bottom:2px}
+.spec-val{font-size:13px;font-weight:600;color:var(--ink)}
+.modal-buy{flex:1;background:var(--accent);color:#fff;border:none;padding:14px;border-radius:10px;font-size:15px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:7px;width:100%}
+.modal-buy:hover{background:#e02e00;transform:translateY(-2px);box-shadow:0 8px 24px rgba(255,59,0,.3)}
+.cart-overlay{position:fixed;inset:0;background:rgba(0,0,0,.4);z-index:499;opacity:0;pointer-events:none;transition:opacity .3s}
+.cart-overlay.open{opacity:1;pointer-events:all}
+.cart-sidebar{position:fixed;top:0;right:-420px;width:400px;height:100vh;background:var(--bg2);box-shadow:-4px 0 32px rgba(0,0,0,.12);z-index:500;transition:right .3s cubic-bezier(.4,0,.2,1);display:flex;flex-direction:column}
+.cart-sidebar.open{right:0}
+.cart-header{padding:24px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between}
+.cart-header h3{font-family:'Clash Display',sans-serif;font-size:20px;font-weight:700}
+.cart-close{background:none;border:none;font-size:22px;cursor:pointer;padding:4px}
+.cart-items{flex:1;overflow-y:auto;padding:16px;display:flex;flex-direction:column;gap:12px}
+.cart-item{display:flex;gap:12px;align-items:center;padding:12px;background:var(--bg3);border-radius:10px}
+.cart-item-img{font-size:36px;flex-shrink:0}
+.cart-item-info{flex:1;min-width:0}
+.cart-item-name{font-size:13px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.cart-item-price{font-size:15px;font-weight:700;color:var(--accent);font-family:'Clash Display',sans-serif}
+.cart-item-remove{background:none;border:none;color:var(--ink3);cursor:pointer;font-size:18px;padding:4px;transition:color .2s}
+.cart-item-remove:hover{color:var(--accent)}
+.cart-footer{padding:20px 24px;border-top:1px solid var(--border)}
+.cart-total{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px}
+.cart-total-label{font-size:14px;color:var(--ink2)}
+.cart-total-val{font-family:'Clash Display',sans-serif;font-size:28px;font-weight:700;color:var(--ink)}
+.cart-checkout{width:100%;background:var(--accent);color:#fff;border:none;padding:16px;border-radius:10px;font-size:16px;font-weight:700;cursor:pointer;font-family:'Outfit',sans-serif;transition:all .2s}
+.cart-checkout:hover{background:#e02e00}
+.cart-empty{text-align:center;padding:60px 20px;color:var(--ink3)}
+.cart-empty .empty-icon{font-size:52px;margin-bottom:12px}
+footer{background:var(--ink);color:rgba(255,255,255,.7);margin-top:60px}
+.footer-top{max-width:1400px;margin:0 auto;padding:48px 32px;display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px}
+.footer-logo{font-family:'Clash Display',sans-serif;font-size:26px;font-weight:700;color:#fff;margin-bottom:12px}
+.footer-logo span{color:var(--accent)}
+.footer-desc{font-size:13px;line-height:1.7;max-width:260px}
+.footer-col h4{font-size:12px;text-transform:uppercase;letter-spacing:1.5px;color:rgba(255,255,255,.4);font-weight:600;margin-bottom:14px}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+.footer-col ul li a{font-size:13px;color:rgba(255,255,255,.65);transition:color .2s}
+.footer-col ul li a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding:18px 32px;max-width:1400px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;font-size:12px}
+.affiliate-notice{font-size:11px;color:rgba(255,255,255,.35)}
+.toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%) translateY(80px);background:var(--ink);color:#fff;padding:12px 24px;border-radius:100px;font-size:14px;font-weight:500;z-index:9999;transition:transform .3s;display:flex;align-items:center;gap:8px;white-space:nowrap;box-shadow:0 4px 24px rgba(0,0,0,.2)}
+.toast.show{transform:translateX(-50%) translateY(0)}
+@media(max-width:1024px){.page{grid-template-columns:1fr}.sidebar{position:static;display:none}}
+@media(max-width:768px){.header-main{padding:12px 16px;gap:12px}.logo{font-size:22px}.page{padding:16px}.hero-banner{padding:24px}.hero-banner h1{font-size:26px}.hero-emoji{font-size:80px}.promo-strip{grid-template-columns:1fr}.modal-inner{grid-template-columns:1fr}.modal-img-side{border-radius:20px 20px 0 0;padding:24px}.footer-top{grid-template-columns:1fr 1fr}}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <span>🚚 <strong>Envío gratis</strong> en compras seleccionadas</span>
+  <span>⚡ <strong>Hasta 12 cuotas sin interés</strong></span>
+  <span>🔒 <strong>Compra 100% segura</strong></span>
+</div>
+
+<header>
+  <div class="header-main">
+    <div class="logo">Tech<span>Drop</span></div>
+    <div class="search-wrap">
+      <input type="text" id="searchInput" placeholder="Buscar celulares, laptops, auriculares..." oninput="handleSearch(this.value)" onkeydown="if(event.key==='Enter')handleSearch(this.value)">
+      <button class="search-btn" onclick="handleSearch(document.getElementById('searchInput').value)">🔍</button>
+    </div>
+    <div class="header-actions">
+      <button class="cart-btn" onclick="toggleCart()">
+        🛒 Carrito
+        <span class="cart-badge" id="cartBadge">0</span>
+      </button>
+    </div>
+  </div>
+  <div class="nav-cats">
+    <div class="nav-cats-inner">
+      <button class="nav-cat active" onclick="setCategory(this,'todos')"><span class="cicon">🔥</span> Ofertas</button>
+      <button class="nav-cat" onclick="setCategory(this,'celulares')"><span class="cicon">📱</span> Celulares</button>
+      <button class="nav-cat" onclick="setCategory(this,'laptops')"><span class="cicon">💻</span> Laptops</button>
+      <button class="nav-cat" onclick="setCategory(this,'audio')"><span class="cicon">🎧</span> Audio</button>
+      <button class="nav-cat" onclick="setCategory(this,'gaming')"><span class="cicon">🎮</span> Gaming</button>
+      <button class="nav-cat" onclick="setCategory(this,'wearables')"><span class="cicon">⌚</span> Wearables</button>
+      <button class="nav-cat" onclick="setCategory(this,'accesorios')"><span class="cicon">🔌</span> Accesorios</button>
+      <button class="nav-cat" onclick="setCategory(this,'tablets')"><span class="cicon">📟</span> Tablets</button>
+      <button class="nav-cat" onclick="setCategory(this,'smarthome')"><span class="cicon">🏠</span> Smart Home</button>
+      <button class="nav-cat" onclick="setCategory(this,'fotografia')"><span class="cicon">📷</span> Fotografía</button>
+    </div>
+  </div>
+</header>
+
+<div class="page">
+  <aside class="sidebar">
+    <div class="sidebar-title">Categorías</div>
+    <ul class="sidebar-list" id="sidebarCats">
+      <li class="active" onclick="filterSidebar(this,'todos')">Todos <span class="count">18</span></li>
+      <li onclick="filterSidebar(this,'celulares')">📱 Celulares <span class="count">3</span></li>
+      <li onclick="filterSidebar(this,'laptops')">💻 Laptops <span class="count">3</span></li>
+      <li onclick="filterSidebar(this,'audio')">🎧 Audio <span class="count">3</span></li>
+      <li onclick="filterSidebar(this,'gaming')">🎮 Gaming <span class="count">3</span></li>
+      <li onclick="filterSidebar(this,'wearables')">⌚ Wearables <span class="count">2</span></li>
+      <li onclick="filterSidebar(this,'accesorios')">🔌 Accesorios <span class="count">1</span></li>
+    </ul>
+    <div class="sidebar-title">Precio</div>
+    <div class="price-inputs">
+      <input type="number" id="priceMin" placeholder="Mínimo">
+      <input type="number" id="priceMax" placeholder="Máximo">
+    </div>
+    <button class="apply-btn" onclick="applyPriceFilter()">Aplicar</button>
+    <div class="sidebar-title">Marcas</div>
+    <ul class="brand-list">
+      <li><label><input type="checkbox" onchange="applyBrandFilter()"> Apple</label></li>
+      <li><label><input type="checkbox" onchange="applyBrandFilter()"> Samsung</label></li>
+      <li><label><input type="checkbox" onchange="applyBrandFilter()"> Xiaomi</label></li>
+      <li><label><input type="checkbox" onchange="applyBrandFilter()"> Sony</label></li>
+      <li><label><input type="checkbox" onchange="applyBrandFilter()"> JBL</label></li>
+      <li><label><input type="checkbox" onchange="applyBrandFilter()"> Dell</label></li>
+      <li><label><input type="checkbox" onchange="applyBrandFilter()"> HP</label></li>
+      <li><label><input type="checkbox" onchange="applyBrandFilter()"> Razer</label></li>
+    </ul>
+    <div class="sidebar-title">Plataforma</div>
+    <ul class="sidebar-list">
+      <li onclick="filterByPlatform('Amazon')">🟠 Amazon <span class="count">10</span></li>
+      <li onclick="filterByPlatform('MercadoLibre')">🟡 MercadoLibre <span class="count">6</span></li>
+      <li onclick="filterByPlatform('AliExpress')">🔴 AliExpress <span class="count">2</span></li>
+    </ul>
+  </aside>
+
+  <main class="main-content">
+    <div class="hero-banner">
+      <div>
+        <div class="hero-badge">🔥 Oferta del día</div>
+        <h1>Tecnología al<br><span>mejor precio</span><br>de Argentina</h1>
+        <p class="hero-sub">Celulares, laptops, gaming y más. Envío gratis.</p>
+        <button class="hero-cta" onclick="document.getElementById('productsGrid').scrollIntoView({behavior:'smooth'})">Ver todas las ofertas →</button>
+      </div>
+      <div class="hero-emoji">📱</div>
+    </div>
+
+    <div class="promo-strip">
+      <div class="promo-card" onclick="setCategory(document.querySelectorAll('.nav-cat')[4],'gaming')">
+        <div class="promo-icon">🎮</div>
+        <div><div class="promo-title">Gaming Week</div><div class="promo-sub">Hasta 40% OFF en consolas</div></div>
+      </div>
+      <div class="promo-card" onclick="setCategory(document.querySelectorAll('.nav-cat')[3],'audio')">
+        <div class="promo-icon">🎧</div>
+        <div><div class="promo-title">Audio Premium</div><div class="promo-sub">Sony, JBL, Apple en oferta</div></div>
+      </div>
+      <div class="promo-card">
+        <div class="promo-icon">💳</div>
+        <div><div class="promo-title">12 cuotas sin interés</div><div class="promo-sub">En productos seleccionados</div></div>
+      </div>
+    </div>
+
+    <div class="results-bar">
+      <div class="results-count" id="resultsCount"><strong>18 productos</strong> encontrados</div>
+      <select class="sort-select" onchange="sortProducts(this.value)">
+        <option value="relevance">Más relevantes</option>
+        <option value="price-asc">Menor precio</option>
+        <option value="price-desc">Mayor precio</option>
+        <option value="rating">Mejor calificados</option>
+        <option value="discount">Mayor descuento</option>
+      </select>
+    </div>
+
+    <div class="products-grid" id="productsGrid"></div>
+  </main>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="if(event.target===this)closeModal()">
+  <div class="modal">
+    <div class="modal-inner">
+      <div class="modal-img-side" id="modalImg">📱</div>
+      <div class="modal-info">
+        <button class="modal-close" onclick="closeModal()">✕</button>
+        <div class="modal-brand" id="modalBrand"></div>
+        <div class="modal-name" id="modalName"></div>
+        <div class="modal-price" id="modalPrice"></div>
+        <div class="modal-cuotas" id="modalCuotas"></div>
+        <div class="modal-desc" id="modalDesc"></div>
+        <div class="modal-specs" id="modalSpecs"></div>
+        <button class="modal-buy" id="modalBuyBtn">🛒 Comprar ahora — Ver en tienda</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CART -->
+<div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+<div class="cart-sidebar" id="cartSidebar">
+  <div class="cart-header">
+    <h3>🛒 Tu carrito</h3>
+    <button class="cart-close" onclick="toggleCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems">
+    <div class="cart-empty"><div class="empty-icon">🛒</div><div>Tu carrito está vacío</div></div>
+  </div>
+  <div class="cart-footer">
+    <div class="cart-total">
+      <span class="cart-total-label">Total estimado</span>
+      <span class="cart-total-val" id="cartTotal">$0</span>
+    </div>
+    <button class="cart-checkout" onclick="checkout()">Ir a comprar →</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">Tech<span>Drop</span></div>
+      <p class="footer-desc">La tienda de tecnología con los mejores precios de Argentina. Comparamos Amazon, MercadoLibre y AliExpress.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Categorías</h4>
+      <ul><li><a href="#">Celulares</a></li><li><a href="#">Laptops</a></li><li><a href="#">Audio</a></li><li><a href="#">Gaming</a></li><li><a href="#">Wearables</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Ayuda</h4>
+      <ul><li><a href="#">Cómo comprar</a></li><li><a href="#">Envíos</a></li><li><a href="#">Preguntas frecuentes</a></li><li><a href="#">Contacto</a></li></ul>
+    </div>
+    <div class="footer-col">
+      <h4>Seguinos</h4>
+      <ul><li><a href="#">Instagram</a></li><li><a href="#">TikTok</a></li><li><a href="#">YouTube</a></li></ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 TechDrop. Todos los derechos reservados.</span>
+    <span class="affiliate-notice">Sitio participante en programas de afiliados. Ganamos comisiones por compras realizadas a través de nuestros links.</span>
+  </div>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+// =====================================================
+// 🔑 PASO 1: REEMPLAZÁ TUS IDs DE AFILIADO AQUÍ
+// =====================================================
+const AFFILIATE_IDS = {
+  amazon: 'techdropar-20',     // ← Reemplazar con tu ID real de Amazon Associates
+  ml: 'techdrop_ml',         // ← Reemplazar con tu ID real de MercadoLibre Afiliados
+  ali: 'techdrop_ali'        // ← Reemplazar con tu ID real de AliExpress
+};
+
+function affiliateLink(platform, search) {
+  if (platform==='Amazon') return `https://www.amazon.com/-/es/s?k=${encodeURIComponent(search)}&tag=${AFFILIATE_IDS.amazon}`;
+  if (platform==='MercadoLibre') return `https://listado.mercadolibre.com.ar/${encodeURIComponent(search)}`;
+  if (platform==='AliExpress') return `https://www.aliexpress.com/wholesale?SearchText=${encodeURIComponent(search)}`;
+  return '#';
+}
+
+// =====================================================
+// CATÁLOGO DE PRODUCTOS
+// Cada producto tiene: id, categoría, marca, nombre,
+// emoji, precio, precio original, descuento, rating,
+// reseñas, plataforma, cuotas, badges, descripción,
+// especificaciones técnicas y link de afiliado.
+// =====================================================
+const PRODUCTS = [
+  {id:1,category:'celulares',brand:'Samsung',name:'Samsung Galaxy S24 FE 5G 256GB',emoji:'📱',price:459999,originalPrice:499999,discount:8,rating:4.6,reviews:8241,platform:'MercadoLibre',cuotas:'12 cuotas sin interés de $38.333',badges:['top'],freeShipping:true,desc:'Pantalla Dynamic AMOLED de 6.7", cámara de 50MP con IA, batería de 4700mAh y carga rápida de 25W. El Galaxy más completo del año.',specs:[{k:'Pantalla',v:'6.7" FHD+'},{k:'RAM',v:'8GB'},{k:'Almac.',v:'256GB'},{k:'Cámara',v:'50MP'},{k:'Batería',v:'4700mAh'},{k:'OS',v:'Android 14'}]},
+  {id:2,category:'celulares',brand:'Apple',name:'iPhone 15 128GB — Desbloqueado',emoji:'📱',price:699999,originalPrice:799999,discount:12,rating:4.8,reviews:15320,platform:'Amazon',cuotas:'12 cuotas sin interés de $58.333',badges:['sale','top'],freeShipping:true,desc:'Chip A16 Bionic, sistema de cámara de 48MP, Dynamic Island, puerto USB-C y batería de larga duración.',specs:[{k:'Chip',v:'A16 Bionic'},{k:'Pantalla',v:'6.1" OLED'},{k:'Cámara',v:'48MP'},{k:'Almac.',v:'128GB'},{k:'Batería',v:'26h video'},{k:'Puerto',v:'USB-C'}]},
+  {id:3,category:'celulares',brand:'Xiaomi',name:'Xiaomi Redmi Note 13 Pro 256GB',emoji:'📱',price:219999,originalPrice:279999,discount:21,rating:4.5,reviews:6120,platform:'AliExpress',cuotas:'6 cuotas sin interés de $36.666',badges:['sale'],freeShipping:false,desc:'Cámara principal de 200MP, pantalla AMOLED 6.67" a 120Hz, carga turbo de 67W y batería de 5100mAh.',specs:[{k:'Pantalla',v:'6.67" 120Hz'},{k:'Cámara',v:'200MP'},{k:'RAM',v:'8GB'},{k:'Almac.',v:'256GB'},{k:'Carga',v:'67W Turbo'},{k:'Batería',v:'5100mAh'}]},
+  {id:4,category:'audio',brand:'Sony',name:'Sony WH-1000XM5 Noise Cancelling',emoji:'🎧',price:89999,originalPrice:129999,discount:30,rating:4.9,reviews:12450,platform:'Amazon',cuotas:'6 cuotas sin interés de $14.999',badges:['sale','top'],freeShipping:true,desc:'Los mejores auriculares del mercado. Cancelación de ruido líder en la industria, 30 horas de batería y audio Hi-Res.',specs:[{k:'ANC',v:'Industry Leading'},{k:'Batería',v:'30 horas'},{k:'Drivers',v:'30mm'},{k:'BT',v:'5.2'},{k:'Plegable',v:'Sí'},{k:'Micrófonos',v:'8 mics'}]},
+  {id:5,category:'audio',brand:'JBL',name:'JBL Tune 770NC Inalámbrico',emoji:'🎧',price:44999,originalPrice:59999,discount:25,rating:4.4,reviews:4320,platform:'MercadoLibre',cuotas:'3 cuotas sin interés de $14.999',badges:['sale'],freeShipping:true,desc:'Cancelación de ruido adaptable, 70 horas de batería y sonido JBL Pure Bass. Plegable y ultraliviano.',specs:[{k:'ANC',v:'Adaptable'},{k:'Batería',v:'70 horas'},{k:'Drivers',v:'40mm'},{k:'Peso',v:'221g'},{k:'BT',v:'5.3'},{k:'Colores',v:'5 opciones'}]},
+  {id:6,category:'audio',brand:'Apple',name:'AirPods Pro 2ª Generación',emoji:'🎵',price:199999,originalPrice:229999,discount:13,rating:4.8,reviews:9870,platform:'Amazon',cuotas:'12 cuotas sin interés de $16.666',badges:['top'],freeShipping:true,desc:'ANC hasta 2x más potente, audio adaptable, resistencia al agua IPX4 y chip H2 para audio espacial inmersivo.',specs:[{k:'Chip',v:'H2'},{k:'ANC',v:'2x mejor'},{k:'Batería',v:'30 horas'},{k:'Carga',v:'USB-C/MagSafe'},{k:'Resistencia',v:'IPX4'},{k:'Modo',v:'Transparencia adapt.'}]},
+  {id:7,category:'laptops',brand:'Apple',name:'MacBook Air M3 13" — 8GB/256GB',emoji:'💻',price:1099999,originalPrice:1199999,discount:8,rating:4.9,reviews:5620,platform:'Amazon',cuotas:'12 cuotas sin interés de $91.666',badges:['top'],freeShipping:true,desc:'Chip M3 ultra rápido, pantalla Liquid Retina, 18 horas de batería y diseño ultradelgado sin ventilador.',specs:[{k:'Chip',v:'Apple M3'},{k:'RAM',v:'8GB unificada'},{k:'SSD',v:'256GB'},{k:'Pantalla',v:'13.6" Retina'},{k:'Batería',v:'18 horas'},{k:'Peso',v:'1.24 kg'}]},
+  {id:8,category:'laptops',brand:'Dell',name:'Dell XPS 13 Core Ultra 7 — 16GB',emoji:'💻',price:899999,originalPrice:1099999,discount:18,rating:4.7,reviews:2840,platform:'Amazon',cuotas:'12 cuotas sin interés de $74.999',badges:['sale'],freeShipping:true,desc:'Pantalla InfinityEdge 2.8K OLED, procesador Intel Core Ultra 7 y chasis de aluminio ultracompacto.',specs:[{k:'CPU',v:'Core Ultra 7'},{k:'RAM',v:'16GB LPDDR5'},{k:'SSD',v:'512GB NVMe'},{k:'Pantalla',v:'13.4" OLED 2.8K'},{k:'Batería',v:'13 horas'},{k:'Peso',v:'1.17 kg'}]},
+  {id:9,category:'laptops',brand:'HP',name:'HP Pavilion 15 Ryzen 5 — 16GB/512GB',emoji:'💻',price:479999,originalPrice:569999,discount:15,rating:4.3,reviews:3210,platform:'MercadoLibre',cuotas:'12 cuotas sin interés de $39.999',badges:['sale'],freeShipping:false,desc:'Laptop completa para trabajo y estudio. Pantalla FHD 15.6", AMD Ryzen 5 y gráficos Radeon integrados.',specs:[{k:'CPU',v:'AMD Ryzen 5'},{k:'RAM',v:'16GB DDR4'},{k:'SSD',v:'512GB NVMe'},{k:'Pantalla',v:'15.6" FHD IPS'},{k:'GPU',v:'Radeon Vega 7'},{k:'OS',v:'Windows 11'}]},
+  {id:10,category:'gaming',brand:'Sony',name:'PlayStation 5 Slim Digital Edition',emoji:'🎮',price:549999,originalPrice:729999,discount:24,rating:4.9,reviews:23100,platform:'Amazon',cuotas:'12 cuotas sin interés de $45.833',badges:['sale','top'],freeShipping:true,desc:'SSD Ultra HD de 1TB, ray-tracing en tiempo real, 120fps y DualSense incluido.',specs:[{k:'CPU',v:'AMD Zen 2 8-core'},{k:'GPU',v:'10.28 TFLOPS'},{k:'RAM',v:'16GB GDDR6'},{k:'SSD',v:'1TB NVMe'},{k:'Resolución',v:'Hasta 8K'},{k:'FPS',v:'Hasta 120fps'}]},
+  {id:11,category:'gaming',brand:'Nintendo',name:'Nintendo Switch OLED — Blanca',emoji:'🕹️',price:329999,originalPrice:379999,discount:13,rating:4.8,reviews:18750,platform:'Amazon',cuotas:'6 cuotas sin interés de $54.999',badges:['new'],freeShipping:true,desc:'Pantalla OLED de 7", base mejorada con ethernet, sonido mejorado. Jugá en casa o en cualquier lugar.',specs:[{k:'Pantalla',v:'7" OLED'},{k:'Almac.',v:'64GB'},{k:'Batería',v:'4.5–9 horas'},{k:'Modos',v:'TV/Mesa/Portátil'},{k:'WiFi',v:'802.11ac'},{k:'USB',v:'USB-C'}]},
+  {id:12,category:'gaming',brand:'Razer',name:'Razer DeathAdder V3 Mouse Gaming',emoji:'🖱️',price:44999,originalPrice:59999,discount:25,rating:4.7,reviews:7230,platform:'Amazon',cuotas:'3 cuotas sin interés de $14.999',badges:['sale'],freeShipping:true,desc:'Sensor Focus Pro 30K DPI, diseño ergonómico de 59g, interruptores ópticos de 90 millones de clics.',specs:[{k:'Sensor',v:'Focus Pro 30K'},{k:'Peso',v:'59g'},{k:'Botones',v:'5 program.'},{k:'Polling',v:'8000Hz'},{k:'Cable',v:'SpeedFlex 1.8m'},{k:'RGB',v:'Chroma'}]},
+  {id:13,category:'wearables',brand:'Apple',name:'Apple Watch Series 10 GPS 42mm',emoji:'⌚',price:349999,originalPrice:399999,discount:12,rating:4.8,reviews:9820,platform:'MercadoLibre',cuotas:'12 cuotas sin interés de $29.166',badges:['new'],freeShipping:true,desc:'El Apple Watch más delgado. Pantalla Retina siempre activa, detección de accidentes, ECG y +40 apps de salud.',specs:[{k:'Pantalla',v:'LTPO OLED Always-On'},{k:'Chip',v:'S10 SiP'},{k:'Batería',v:'18 horas'},{k:'GPS',v:'Dual-frequency'},{k:'Agua',v:'50m'},{k:'WatchOS',v:'11'}]},
+  {id:14,category:'wearables',brand:'Samsung',name:'Samsung Galaxy Watch 7 44mm',emoji:'⌚',price:239999,originalPrice:279999,discount:14,rating:4.6,reviews:5430,platform:'Amazon',cuotas:'6 cuotas sin interés de $39.999',badges:['new'],freeShipping:true,desc:'Monitoreo de glucosa estimado, análisis de composición corporal, sensor BioActive de nueva generación, 40h de batería.',specs:[{k:'CPU',v:'Exynos W1000'},{k:'RAM',v:'2GB'},{k:'Pantalla',v:'1.47" AMOLED'},{k:'Batería',v:'40 horas'},{k:'Resistencia',v:'5ATM+IP68'},{k:'OS',v:'Wear OS 5'}]},
+  {id:15,category:'accesorios',brand:'Anker',name:'Cargador Anker 65W GaN — 3 puertos',emoji:'🔌',price:18999,originalPrice:24999,discount:24,rating:4.7,reviews:12300,platform:'Amazon',cuotas:'',badges:['sale'],freeShipping:true,desc:'Tecnología GaN de última generación. Cargá laptop, celular y tablet al mismo tiempo en un cargador ultra compacto.',specs:[{k:'Potencia',v:'65W total'},{k:'Puertos',v:'2x USB-C + 1x USB-A'},{k:'Tecnología',v:'GaN II'},{k:'Compatible',v:'MacBook, iPhone, Android'},{k:'Peso',v:'130g'},{k:'Voltaje',v:'100-240V'}]},
+  {id:16,category:'tablets',brand:'Apple',name:'iPad Air M2 11" WiFi 128GB',emoji:'📟',price:649999,originalPrice:749999,discount:13,rating:4.8,reviews:7820,platform:'Amazon',cuotas:'12 cuotas sin interés de $54.166',badges:['top','new'],freeShipping:true,desc:'Chip M2, pantalla Liquid Retina de 11", compatible con Apple Pencil Pro y Magic Keyboard. Ultra rápida.',specs:[{k:'Chip',v:'Apple M2'},{k:'Pantalla',v:'11" Liquid Retina'},{k:'Almac.',v:'128GB'},{k:'Cámara',v:'12MP TrueDepth'},{k:'Batería',v:'10 horas'},{k:'WiFi',v:'WiFi 6E'}]},
+  {id:17,category:'smarthome',brand:'Amazon',name:'Echo Dot 5ª Gen — Altavoz Alexa',emoji:'🔊',price:14999,originalPrice:19999,discount:25,rating:4.5,reviews:34500,platform:'Amazon',cuotas:'',badges:['sale'],freeShipping:true,desc:'Sonido más potente con bajo mejorado. Controlá tu hogar con la voz, escuchá música y pedile lo que necesites a Alexa.',specs:[{k:'Altavoz',v:'1.73" frontal'},{k:'Conectividad',v:'WiFi + BT'},{k:'Protocolo',v:'Zigbee + Matter'},{k:'Asistente',v:'Alexa'},{k:'Colores',v:'Antracita/Blanco'},{k:'Alim.',v:'Cable 15W'}]},
+  {id:18,category:'fotografia',brand:'DJI',name:'DJI Osmo Mobile 6 — Estabilizador',emoji:'📷',price:79999,originalPrice:99999,discount:20,rating:4.6,reviews:3210,platform:'Amazon',cuotas:'6 cuotas sin interés de $13.333',badges:['sale'],freeShipping:true,desc:'Estabilizador de 3 ejes para celular. ActiveTrack 6.0, seguimiento automático, plegable, compatible iPhone y Android.',specs:[{k:'Ejes',v:'3 ejes mot.'},{k:'Carga máx.',v:'300g'},{k:'Batería',v:'8 horas'},{k:'BT',v:'5.1'},{k:'Plegado',v:'Compacto'},{k:'Compatible',v:'iOS y Android'}]}
+];
+
+// =====================================================
+// ESTADO
+// =====================================================
+let cart = [];
+let filteredProducts = [...PRODUCTS];
+let currentCategory = 'todos';
+
+// =====================================================
+// RENDER PRODUCTOS
+// =====================================================
+function renderProducts(products) {
+  const grid = document.getElementById('productsGrid');
+  document.getElementById('resultsCount').innerHTML = `<strong>${products.length} producto${products.length!==1?'s':''}</strong> encontrado${products.length!==1?'s':''}`;
+  if (!products.length) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--ink3)"><div style="font-size:48px;margin-bottom:12px">🔍</div><div style="font-size:18px;font-weight:600;margin-bottom:8px">Sin resultados</div><div style="font-size:14px">Probá con otro término</div></div>`;
+    return;
+  }
+  grid.innerHTML = products.map(p=>`
+    <div class="product-card" onclick="openModal(${p.id})">
+      <div class="product-img">
+        <span class="emoji">${p.emoji}</span>
+        <button class="wish-btn" onclick="event.stopPropagation();toggleWish(this)" title="Favoritos">♡</button>
+        <div class="badges">
+          ${p.badges.includes('sale')?`<span class="badge badge-sale">-${p.discount}%</span>`:''}
+          ${p.badges.includes('new')?`<span class="badge badge-new">Nuevo</span>`:''}
+          ${p.badges.includes('top')?`<span class="badge badge-top">⭐ Top ventas</span>`:''}
+          ${p.freeShipping?`<span class="badge badge-free">Envío gratis</span>`:''}
+        </div>
+        <div class="platform-chip">${p.platform}</div>
+      </div>
+      <div class="product-body">
+        <div class="product-brand">${p.brand}</div>
+        <div class="product-name">${p.name}</div>
+        <div class="rating-row">
+          <span class="stars">${'★'.repeat(Math.floor(p.rating))}${'☆'.repeat(5-Math.floor(p.rating))}</span>
+          <span class="rating-num">${p.rating} (${p.reviews.toLocaleString('es-AR')})</span>
+        </div>
+        <div class="price-row">
+          <span class="price-now">$${p.price.toLocaleString('es-AR')}</span>
+          ${p.originalPrice>p.price?`<span class="price-was">$${p.originalPrice.toLocaleString('es-AR')}</span>`:''}
+          ${p.discount>0?`<span class="price-pct">-${p.discount}%</span>`:''}
+        </div>
+        ${p.cuotas?`<div class="cuotas">💳 ${p.cuotas}</div>`:'<div style="height:20px"></div>'}
+        <button class="btn-add" id="btn-${p.id}" onclick="event.stopPropagation();addToCart(${p.id})">🛒 Agregar al carrito</button>
+      </div>
+    </div>
+  `).join('');
+}
+
+// =====================================================
+// MODAL DETALLE DEL PRODUCTO
+// =====================================================
+function openModal(id) {
+  const p = PRODUCTS.find(x=>x.id===id);
+  if (!p) return;
+  document.getElementById('modalImg').textContent = p.emoji;
+  document.getElementById('modalBrand').textContent = p.brand.toUpperCase() + ' · ' + p.platform;
+  document.getElementById('modalName').textContent = p.name;
+  document.getElementById('modalPrice').textContent = `$${p.price.toLocaleString('es-AR')}`;
+  document.getElementById('modalCuotas').textContent = p.cuotas || `Precio contado`;
+  document.getElementById('modalDesc').textContent = p.desc;
+  document.getElementById('modalSpecs').innerHTML = p.specs.map(s=>`<div class="spec"><div class="spec-key">${s.k}</div><div class="spec-val">${s.v}</div></div>`).join('');
+  const btn = document.getElementById('modalBuyBtn');
+  btn.innerHTML = `🛒 Comprar en ${p.platform} →`;
+  btn.onclick = () => {
+    window.open(affiliateLink(p.platform, p.name), '_blank');
+    showToast(`🚀 Abriendo ${p.platform}...`);
+    closeModal();
+  };
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+// =====================================================
+// CARRITO
+// =====================================================
+function addToCart(id) {
+  const p = PRODUCTS.find(x=>x.id===id);
+  if (cart.find(x=>x.id===id)) { showToast('✅ Ya está en tu carrito'); return; }
+  cart.push({...p});
+  updateCart();
+  showToast(`🛒 Agregado: ${p.name.substring(0,28)}...`);
+  const btn = document.getElementById(`btn-${id}`);
+  if (btn) { btn.textContent = '✅ Agregado'; btn.classList.add('added'); setTimeout(()=>{ btn.innerHTML='🛒 Agregar al carrito'; btn.classList.remove('added'); },2000); }
+}
+function removeFromCart(id) { cart = cart.filter(x=>x.id!==id); updateCart(); }
+function updateCart() {
+  document.getElementById('cartBadge').textContent = cart.length;
+  const total = cart.reduce((s,p)=>s+p.price,0);
+  document.getElementById('cartTotal').textContent = `$${total.toLocaleString('es-AR')}`;
+  const ci = document.getElementById('cartItems');
+  if (!cart.length) { ci.innerHTML=`<div class="cart-empty"><div class="empty-icon">🛒</div><div>Tu carrito está vacío</div></div>`; return; }
+  ci.innerHTML = cart.map(p=>`
+    <div class="cart-item">
+      <div class="cart-item-img">${p.emoji}</div>
+      <div class="cart-item-info">
+        <div class="cart-item-name">${p.name}</div>
+        <div class="cart-item-price">$${p.price.toLocaleString('es-AR')}</div>
+      </div>
+      <button class="cart-item-remove" onclick="removeFromCart(${p.id})">✕</button>
+    </div>
+  `).join('');
+}
+function toggleCart() {
+  document.getElementById('cartSidebar').classList.toggle('open');
+  document.getElementById('cartOverlay').classList.toggle('open');
+}
+function checkout() {
+  if (!cart.length) { showToast('⚠️ Tu carrito está vacío'); return; }
+  cart.forEach(p => window.open(affiliateLink(p.platform, p.name), '_blank'));
+  showToast('🚀 Abriendo tiendas para completar la compra...');
+  toggleCart();
+}
+
+// =====================================================
+// FILTROS
+// =====================================================
+function setCategory(el, cat) {
+  document.querySelectorAll('.nav-cat').forEach(c=>c.classList.remove('active'));
+  if (el) el.classList.add('active');
+  currentCategory = cat;
+  applyAllFilters();
+}
+function filterSidebar(el, cat) {
+  document.querySelectorAll('#sidebarCats li').forEach(c=>c.classList.remove('active'));
+  el.classList.add('active');
+  currentCategory = cat;
+  applyAllFilters();
+}
+function filterByPlatform(platform) {
+  filteredProducts = PRODUCTS.filter(p=>p.platform===platform);
+  renderProducts(filteredProducts);
+  showToast(`Mostrando productos de ${platform}`);
+}
+function applyAllFilters() {
+  filteredProducts = currentCategory==='todos' ? [...PRODUCTS] : PRODUCTS.filter(p=>p.category===currentCategory);
+  renderProducts(filteredProducts);
+}
+function handleSearch(val) {
+  const q = val.toLowerCase().trim();
+  if (!q) { applyAllFilters(); return; }
+  filteredProducts = PRODUCTS.filter(p=>p.name.toLowerCase().includes(q)||p.brand.toLowerCase().includes(q)||p.category.toLowerCase().includes(q));
+  renderProducts(filteredProducts);
+}
+function applyPriceFilter() {
+  const min = parseInt(document.getElementById('priceMin').value)||0;
+  const max = parseInt(document.getElementById('priceMax').value)||Infinity;
+  const base = currentCategory==='todos' ? PRODUCTS : PRODUCTS.filter(p=>p.category===currentCategory);
+  filteredProducts = base.filter(p=>p.price>=min && p.price<=max);
+  renderProducts(filteredProducts);
+  showToast(`✅ Filtro: $${min.toLocaleString('es-AR')} — $${max===Infinity?'∞':max.toLocaleString('es-AR')}`);
+}
+function applyBrandFilter() {
+  const checked = [...document.querySelectorAll('.brand-list input:checked')].map(i=>i.parentElement.textContent.trim());
+  if (!checked.length) { applyAllFilters(); return; }
+  filteredProducts = PRODUCTS.filter(p=>checked.includes(p.brand));
+  renderProducts(filteredProducts);
+}
+function sortProducts(val) {
+  const arr = [...filteredProducts];
+  if (val==='price-asc') arr.sort((a,b)=>a.price-b.price);
+  if (val==='price-desc') arr.sort((a,b)=>b.price-a.price);
+  if (val==='rating') arr.sort((a,b)=>b.rating-a.rating);
+  if (val==='discount') arr.sort((a,b)=>b.discount-a.discount);
+  renderProducts(arr);
+}
+function toggleWish(btn) {
+  btn.classList.toggle('active');
+  btn.textContent = btn.classList.contains('active')?'♥':'♡';
+  showToast(btn.classList.contains('active')?'♥ Guardado en favoritos':'♡ Eliminado de favoritos');
+}
+
+// =====================================================
+// TOAST NOTIFICATION
+// =====================================================
+function showToast(msg) {
+  const t = document.getElementById('toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  setTimeout(()=>t.classList.remove('show'), 2800);
+}
+
+// INIT
+renderProducts(PRODUCTS);
+</script>
+</body>
+</html>
