@@ -425,12 +425,13 @@ function renderProducts(products) {
           <span class="rating-num">${p.rating} (${p.reviews.toLocaleString('es-AR')})</span>
         </div>
         <div class="price-row">
-          <span class="price-now">$${p.price.toLocaleString('es-AR')}</span>
-          ${p.originalPrice>p.price?`<span class="price-was">$${p.originalPrice.toLocaleString('es-AR')}</span>`:''}
-          ${p.discount>0?`<span class="price-pct">-${p.discount}%</span>`:''}
+          ${p.discount>0?`<span class="price-pct">-${p.discount}% OFF</span>`:''}
+          ${p.freeShipping?`<span class="price-pct" style="background:rgba(0,166,81,.1);color:#00a651">Envío gratis</span>`:''}
         </div>
-        ${p.cuotas?`<div class="cuotas">💳 ${p.cuotas}</div>`:'<div style="height:20px"></div>'}
-        <button class="btn-add" id="btn-${p.id}" onclick="event.stopPropagation();addToCart(${p.id})">🛒 Agregar al carrito</button>
+        <div style="background:#fff8f0;border:1px solid #ffe0cc;border-radius:8px;padding:10px 12px;margin-bottom:12px;font-size:13px;color:#cc4400;">
+          💡 El precio real y actualizado lo ves en ${p.platform}
+        </div>
+        <button class="btn-add" id="btn-${p.id}" onclick="event.stopPropagation();goToStore(${p.id})">Ver precio en ${p.platform} →</button>
       </div>
     </div>
   `).join('');
@@ -573,6 +574,14 @@ function showToast(msg) {
   t.textContent = msg;
   t.classList.add('show');
   setTimeout(()=>t.classList.remove('show'), 2800);
+}
+
+// IR A TIENDA AFILIADA
+function goToStore(id) {
+  const p = PRODUCTS.find(x=>x.id===id);
+  if (!p) return;
+  window.open(affiliateLink(p.platform, p.name), '_blank');
+  showToast(`🚀 Abriendo ${p.platform} con el precio real...`);
 }
 
 // INIT
