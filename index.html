@@ -174,6 +174,9 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);margin-top:50px}
       <button class="nav-cat" onclick="setCategory(this,'hogar')">🏡 Smart Home</button>
       <button class="nav-cat" onclick="setCategory(this,'accesorios')">🔌 Accesorios</button>
       <button class="nav-cat" onclick="setCategory(this,'smartwatch')">⌚ Smartwatches</button>
+      <button class="nav-cat" onclick="setCategory(this,'beauty')">💄 Beauty</button>
+      <button class="nav-cat" onclick="setCategory(this,'cocina')">🍳 Cocina</button>
+      <button class="nav-cat" onclick="setCategory(this,'moda')">👗 Moda</button>
     </div>
   </div>
 </header>
@@ -191,6 +194,9 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);margin-top:50px}
       <li onclick="filterSidebar(this,'hogar')">🏡 Smart Home <span class="cnt">5</span></li>
       <li onclick="filterSidebar(this,'accesorios')">🔌 Accesorios <span class="cnt">3</span></li>
       <li onclick="filterSidebar(this,'smartwatch')">⌚ Smartwatches <span class="cnt">3</span></li>
+      <li onclick="filterSidebar(this,'beauty')" style="color:#e91e8c">💄 Luxury Beauty <span class="cnt">6</span></li>
+      <li onclick="filterSidebar(this,'cocina')" style="color:#ff6b00">🍳 Cocina <span class="cnt">6</span></li>
+      <li onclick="filterSidebar(this,'moda')" style="color:#9c27b0">👗 Moda <span class="cnt">6</span></li>
     </ul>
     <div class="sidebar-title">Marcas</div>
     <ul class="brand-list">
@@ -215,29 +221,29 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);margin-top:50px}
   <main class="main-content">
     <div class="hero-banner">
       <div>
-        <div class="hero-badge">🔥 Los más vendidos en Argentina 2026</div>
-        <h1>Tecnología y hogar<br>al <span>mejor precio</span></h1>
-        <p class="hero-sub">Celulares, laptops, electrodomésticos y gadgets</p>
+        <div class="hero-badge">🔥 Los más vendidos en Amazon 2026</div>
+        <h1>Todo lo que querés<br>al <span>mejor precio</span></h1>
+        <p class="hero-sub">Tecnología, beauty, moda, cocina y más. Envío gratis.</p>
         <button class="hero-cta" onclick="document.getElementById('productsGrid').scrollIntoView({behavior:'smooth'})">Ver todas las ofertas →</button>
       </div>
-      <div class="hero-img">📱</div>
+      <div class="hero-img">🛍️</div>
     </div>
     <div class="promo-strip">
+      <div class="promo-card" onclick="setCategory(document.querySelectorAll('.nav-cat')[10],'beauty')">
+        <div class="promo-icon">💄</div>
+        <div><div class="promo-title">Luxury Beauty</div><div class="promo-sub">Dyson, La Mer, Estée Lauder</div></div>
+      </div>
+      <div class="promo-card" onclick="setCategory(document.querySelectorAll('.nav-cat')[11],'cocina')">
+        <div class="promo-icon">🍳</div>
+        <div><div class="promo-title">Cocina & Hogar</div><div class="promo-sub">KitchenAid, Ninja, Le Creuset</div></div>
+      </div>
+      <div class="promo-card" onclick="setCategory(document.querySelectorAll('.nav-cat')[12],'moda')">
+        <div class="promo-icon">👗</div>
+        <div><div class="promo-title">Moda & Estilo</div><div class="promo-sub">Nike, Adidas, Ray-Ban, Gucci</div></div>
+      </div>
       <div class="promo-card" onclick="setCategory(document.querySelectorAll('.nav-cat')[1],'celulares')">
         <div class="promo-icon">📱</div>
-        <div><div class="promo-title">Celulares Top 2026</div><div class="promo-sub">Samsung, Xiaomi, Motorola</div></div>
-      </div>
-      <div class="promo-card" onclick="setCategory(document.querySelectorAll('.nav-cat')[3],'electro')">
-        <div class="promo-icon">🏠</div>
-        <div><div class="promo-title">Electrodomésticos</div><div class="promo-sub">LG, Samsung, Whirlpool</div></div>
-      </div>
-      <div class="promo-card" onclick="setCategory(document.querySelectorAll('.nav-cat')[4],'gadgets')">
-        <div class="promo-icon">🇨🇳</div>
-        <div><div class="promo-title">Gadgets China</div><div class="promo-sub">Hasta 45% OFF</div></div>
-      </div>
-      <div class="promo-card">
-        <div class="promo-icon">💳</div>
-        <div><div class="promo-title">12 cuotas sin interés</div><div class="promo-sub">Productos seleccionados</div></div>
+        <div><div class="promo-title">Celulares</div><div class="promo-sub">Samsung, Xiaomi, Apple</div></div>
       </div>
     </div>
     <div class="results-bar">
@@ -357,7 +363,7 @@ function svgPowerbank(g1,g2,label){return `data:image/svg+xml,<svg xmlns='http:/
 
 const PRODUCTS = [
   // CELULARES
-  {id:1,cat:'celulares',brand:'Samsung',name:'Samsung Galaxy A06 64GB 4G',img:svgPhone('%230f2027','%23203a43','%231a1a2e','Galaxy A06'),platform:'MercadoLibre',search:'Samsung Galaxy A06 64GB',asin:null,discount:15,rating:4.4,reviews:12800,freeShipping:true,badges:['top','free'],desc:'El Samsung más vendido en Argentina. Pantalla de 6.7" IPS, cámara de 50MP con IA, batería de 5000mAh y Android 14. Garantía oficial Samsung Argentina.',specs:[{k:'Pantalla',v:'6.7" IPS LCD'},{k:'Cámara',v:'50MP + 2MP'},{k:'RAM',v:'4GB'},{k:'Almac.',v:'64GB'},{k:'Batería',v:'5000mAh'},{k:'Red',v:'4G LTE'}]},
+  {id:1,cat:'celulares',brand:'Samsung',name:'Samsung Galaxy A06 64GB 4G',img:'https://m.media-amazon.com/images/I/51l6C2LeZFL._AC_SL1000_.jpg',platform:'MercadoLibre',search:'Samsung Galaxy A06 64GB',asin:null,discount:15,rating:4.4,reviews:12800,freeShipping:true,badges:['top','free'],desc:'El Samsung más vendido en Argentina. Pantalla de 6.7" IPS, cámara de 50MP con IA, batería de 5000mAh y Android 14. Garantía oficial Samsung Argentina.',specs:[{k:'Pantalla',v:'6.7" IPS LCD'},{k:'Cámara',v:'50MP + 2MP'},{k:'RAM',v:'4GB'},{k:'Almac.',v:'64GB'},{k:'Batería',v:'5000mAh'},{k:'Red',v:'4G LTE'}]},
 
   {id:2,cat:'celulares',brand:'Xiaomi',name:'Xiaomi Redmi 14C 128GB 4G',img:svgPhone('%23f7971e','%23ffd200','%23ff6600','Redmi 14C'),platform:'MercadoLibre',search:'Xiaomi Redmi 14C 128GB',asin:null,discount:20,rating:4.5,reviews:9400,freeShipping:true,badges:['top','sale','free'],desc:'El celular más vendido de Xiaomi en Argentina 2026. Pantalla de 6.88" a 120Hz, cámara de 50MP, batería de 5160mAh con carga rápida.',specs:[{k:'Pantalla',v:'6.88" 120Hz'},{k:'Cámara',v:'50MP'},{k:'RAM',v:'6GB'},{k:'Almac.',v:'128GB'},{k:'Batería',v:'5160mAh'},{k:'Carga',v:'Rápida'}]},
 
@@ -367,7 +373,7 @@ const PRODUCTS = [
 
   {id:5,cat:'celulares',brand:'Xiaomi',name:'Xiaomi Redmi Note 14 Pro 5G 256GB',img:svgPhone('%23e96c26','%23ff6a00','%23cc3300','Note 14 Pro'),platform:'MercadoLibre',search:'Xiaomi Redmi Note 14 Pro 5G 256GB',asin:null,discount:25,rating:4.7,reviews:6300,freeShipping:true,badges:['sale','top','free'],desc:'Cámara de 200MP, pantalla AMOLED de 6.67" a 120Hz, procesador Snapdragon 7s Gen 3, 5G y carga de 45W.',specs:[{k:'Pantalla',v:'6.67" AMOLED 120Hz'},{k:'Cámara',v:'200MP'},{k:'RAM',v:'8GB'},{k:'Almac.',v:'256GB'},{k:'Carga',v:'45W'},{k:'Red',v:'5G'}]},
 
-  {id:6,cat:'celulares',brand:'Apple',name:'iPhone 15 128GB — Desbloqueado',img:svgPhone('%23636e72','%232d3436','%23222222','iPhone 15'),platform:'Amazon',search:'iPhone 15 128GB unlocked',asin:'B0CHX3QBCH',discount:10,rating:4.8,reviews:21400,freeShipping:true,badges:['top','free'],desc:'Chip A16 Bionic, cámara principal de 48MP con modo retrato, Dynamic Island, USB-C y hasta 26 horas de reproducción de video.',specs:[{k:'Chip',v:'A16 Bionic'},{k:'Pantalla',v:'6.1" OLED'},{k:'Cámara',v:'48MP'},{k:'Almac.',v:'128GB'},{k:'Batería',v:'26h video'},{k:'Puerto',v:'USB-C'}]},
+  {id:6,cat:'celulares',brand:'Apple',name:'iPhone 15 128GB — Desbloqueado',img:'https://m.media-amazon.com/images/I/51-RPOw693L._AC_SL1200_.jpg',platform:'Amazon',search:'iPhone 15 128GB unlocked',asin:'B0CHX3QBCH',discount:10,rating:4.8,reviews:21400,freeShipping:true,badges:['top','free'],desc:'Chip A16 Bionic, cámara principal de 48MP con modo retrato, Dynamic Island, USB-C y hasta 26 horas de reproducción de video.',specs:[{k:'Chip',v:'A16 Bionic'},{k:'Pantalla',v:'6.1" OLED'},{k:'Cámara',v:'48MP'},{k:'Almac.',v:'128GB'},{k:'Batería',v:'26h video'},{k:'Puerto',v:'USB-C'}]},
 
   {id:7,cat:'celulares',brand:'Motorola',name:'Motorola Edge 50 Neo 256GB 5G',img:svgPhone('%2300b09b','%2396c93d','%23008800','Edge 50 Neo'),platform:'MercadoLibre',search:'Motorola Edge 50 Neo 256GB 5G',asin:null,discount:22,rating:4.6,reviews:4100,freeShipping:true,badges:['sale','new'],desc:'Pantalla pOLED de 6.36" a 120Hz, cámara de 50MP con Telephoto, procesador Dimensity 7300 y carga de 68W.',specs:[{k:'Pantalla',v:'6.36" pOLED 120Hz'},{k:'Cámara',v:'50MP + Telephoto'},{k:'RAM',v:'8GB'},{k:'Almac.',v:'256GB'},{k:'Carga',v:'68W'},{k:'Red',v:'5G'}]},
 
@@ -378,7 +384,7 @@ const PRODUCTS = [
 
   {id:10,cat:'laptops',brand:'Lenovo',name:'Lenovo IdeaPad 3 Core i5 16GB 512GB',img:svgLaptop('%23f953c6','%23b91d73','Lenovo IP3'),platform:'MercadoLibre',search:'Lenovo IdeaPad 3 Core i5 16GB 512GB',asin:null,discount:15,rating:4.4,reviews:2800,freeShipping:true,badges:['sale'],desc:'Core i5 12ª gen, 16GB RAM, SSD 512GB, pantalla Full HD 15.6" y batería de hasta 9 horas.',specs:[{k:'CPU',v:'Intel Core i5-1235U'},{k:'RAM',v:'16GB DDR4'},{k:'SSD',v:'512GB'},{k:'Pantalla',v:'15.6" FHD'},{k:'Batería',v:'9 horas'},{k:'OS',v:'Windows 11'}]},
 
-  {id:11,cat:'laptops',brand:'Apple',name:'MacBook Air M3 13" 8GB 256GB',img:svgLaptop('%23636e72','%232d3436','MacBook Air M3'),platform:'Amazon',search:'MacBook Air M3 13 inch',asin:'B0CX22VFXW',discount:8,rating:4.9,reviews:5600,freeShipping:true,badges:['top'],desc:'Chip Apple M3, 18 horas de batería, pantalla Liquid Retina de 13.6", diseño ultradelgado sin ventilador.',specs:[{k:'Chip',v:'Apple M3'},{k:'RAM',v:'8GB unificada'},{k:'SSD',v:'256GB'},{k:'Pantalla',v:'13.6" Retina'},{k:'Batería',v:'18 horas'},{k:'Peso',v:'1.24 kg'}]},
+  {id:11,cat:'laptops',brand:'Apple',name:'MacBook Air M3 13" 8GB 256GB',img:'https://m.media-amazon.com/images/I/71igjFyr56L._AC_SL1500_.jpg',platform:'Amazon',search:'MacBook Air M3 13 inch',asin:'B0CX22VFXW',discount:8,rating:4.9,reviews:5600,freeShipping:true,badges:['top'],desc:'Chip Apple M3, 18 horas de batería, pantalla Liquid Retina de 13.6", diseño ultradelgado sin ventilador.',specs:[{k:'Chip',v:'Apple M3'},{k:'RAM',v:'8GB unificada'},{k:'SSD',v:'256GB'},{k:'Pantalla',v:'13.6" Retina'},{k:'Batería',v:'18 horas'},{k:'Peso',v:'1.24 kg'}]},
 
   {id:12,cat:'laptops',brand:'Dell',name:'Dell Inspiron 15 Core i5 16GB 512GB',img:svgLaptop('%231e3c72','%232a5298','Dell Inspiron'),platform:'Amazon',search:'Dell Inspiron 15 Core i5 16GB',asin:'B0CSTLJK2D',discount:18,rating:4.5,reviews:4100,freeShipping:true,badges:['sale','free'],desc:'Intel Core i5 13ª gen, 16GB RAM, SSD 512GB, pantalla Full HD 15.6", Wi-Fi 6 y Windows 11.',specs:[{k:'CPU',v:'Intel Core i5-1335U'},{k:'RAM',v:'16GB DDR4'},{k:'SSD',v:'512GB NVMe'},{k:'Pantalla',v:'15.6" FHD'},{k:'WiFi',v:'Wi-Fi 6'},{k:'OS',v:'Windows 11'}]},
 
@@ -417,7 +423,7 @@ const PRODUCTS = [
   {id:28,cat:'gadgets',brand:'Ugreen',name:'Powerbank Anker 20000mAh USB-C 20W',img:svgPowerbank('%23141e30','%23243b55','20000mAh'),platform:'Amazon',search:'Anker 20000mAh power bank USB-C',asin:'B09VPHVT2Z',discount:20,rating:4.7,reviews:14200,freeShipping:true,badges:['sale','free'],desc:'20000mAh, 2x USB-C + 2x USB-A, carga hasta 3 dispositivos. 20W de carga rápida. Carga un iPhone 15 más de 4 veces.',specs:[{k:'Capacidad',v:'20000mAh'},{k:'Puertos',v:'2 USB-C + 2 USB-A'},{k:'Carga',v:'20W PD'},{k:'Peso',v:'440g'},{k:'Ciclos',v:'+500'},{k:'Compatible',v:'Todos los dispositivos'}]},
 
   // AUDIO
-  {id:29,cat:'audio',brand:'Sony',name:'Sony WH-1000XM5 Noise Cancelling',img:svgAudio('%230f0c29','%23302b63','WH-1000XM5'),platform:'Amazon',search:'Sony WH-1000XM5 headphones',asin:'B09XS7JWHH',discount:30,rating:4.9,reviews:12450,freeShipping:true,badges:['sale','top','free'],desc:'Los mejores auriculares del mercado. Cancelación de ruido líder, 30 horas de batería, audio Hi-Res y diseño ultraliviano.',specs:[{k:'ANC',v:'Industry Leading'},{k:'Batería',v:'30 horas'},{k:'BT',v:'5.2'},{k:'Drivers',v:'30mm'},{k:'Plegable',v:'No'},{k:'Peso',v:'250g'}]},
+  {id:29,cat:'audio',brand:'Sony',name:'Sony WH-1000XM5 Noise Cancelling',img:'https://m.media-amazon.com/images/I/61vJtKbAssL._AC_SL1500_.jpg',platform:'Amazon',search:'Sony WH-1000XM5 headphones',asin:'B09XS7JWHH',discount:30,rating:4.9,reviews:12450,freeShipping:true,badges:['sale','top','free'],desc:'Los mejores auriculares del mercado. Cancelación de ruido líder, 30 horas de batería, audio Hi-Res y diseño ultraliviano.',specs:[{k:'ANC',v:'Industry Leading'},{k:'Batería',v:'30 horas'},{k:'BT',v:'5.2'},{k:'Drivers',v:'30mm'},{k:'Plegable',v:'No'},{k:'Peso',v:'250g'}]},
 
   {id:30,cat:'audio',brand:'JBL',name:'JBL Tune 770NC Inalámbrico ANC',img:svgAudio('%23f7971e','%23ffd200','JBL 770NC'),platform:'Amazon',search:'JBL Tune 770NC wireless headphones',asin:'B0BWXP6BTK',discount:25,rating:4.4,reviews:4300,freeShipping:true,badges:['sale'],desc:'Cancelación de ruido adaptable, 70 horas de batería, sonido JBL Pure Bass, plegable y disponible en varios colores.',specs:[{k:'ANC',v:'Adaptable'},{k:'Batería',v:'70 horas'},{k:'Drivers',v:'40mm'},{k:'BT',v:'5.3'},{k:'Plegable',v:'Sí'},{k:'Peso',v:'221g'}]},
 
@@ -426,7 +432,7 @@ const PRODUCTS = [
   {id:32,cat:'audio',brand:'Amazon',name:'Echo Dot 5ª Gen Altavoz Alexa',img:svgSpeaker('%230f2027','%23203a43','Echo Dot 5'),platform:'Amazon',search:'Echo Dot 5th generation Alexa',asin:'B09B8RVKGW',discount:25,rating:4.5,reviews:34500,freeShipping:true,badges:['sale','free'],desc:'Sonido mejorado con bajo potente. Controlá tu hogar con la voz, escuchá música y pedile lo que necesites a Alexa.',specs:[{k:'Altavoz',v:'1.73" frontal'},{k:'WiFi',v:'2.4/5GHz'},{k:'Protocolo',v:'Zigbee + Matter'},{k:'Asistente',v:'Alexa'},{k:'Colores',v:'Antracita/Blanco'},{k:'Alim.',v:'Cable 15W'}]},
 
   // GAMING
-  {id:33,cat:'gaming',brand:'Sony',name:'PlayStation 5 Slim Digital Edition',img:svgConsole('%230f2027','%23203a43','PS5 Slim'),platform:'Amazon',search:'PlayStation 5 Slim Digital Edition',asin:'B0CL5KNB9M',discount:15,rating:4.9,reviews:23100,freeShipping:true,badges:['top','free'],desc:'La consola más poderosa de Sony. SSD de 1TB, ray-tracing, hasta 120fps y DualSense incluido.',specs:[{k:'CPU',v:'AMD Zen 2 8-core'},{k:'GPU',v:'10.28 TFLOPS'},{k:'RAM',v:'16GB GDDR6'},{k:'SSD',v:'1TB'},{k:'Resolución',v:'Hasta 8K'},{k:'FPS',v:'Hasta 120fps'}]},
+  {id:33,cat:'gaming',brand:'Sony',name:'PlayStation 5 Slim Digital Edition',img:'https://m.media-amazon.com/images/I/616X8zng9wS._AC_SL1500_.jpg',platform:'Amazon',search:'PlayStation 5 Slim Digital Edition',asin:'B0CL5KNB9M',discount:15,rating:4.9,reviews:23100,freeShipping:true,badges:['top','free'],desc:'La consola más poderosa de Sony. SSD de 1TB, ray-tracing, hasta 120fps y DualSense incluido.',specs:[{k:'CPU',v:'AMD Zen 2 8-core'},{k:'GPU',v:'10.28 TFLOPS'},{k:'RAM',v:'16GB GDDR6'},{k:'SSD',v:'1TB'},{k:'Resolución',v:'Hasta 8K'},{k:'FPS',v:'Hasta 120fps'}]},
 
   {id:34,cat:'gaming',brand:'Nintendo',name:'Nintendo Switch OLED Blanca',img:svgConsole('%23e81416','%23ffa500','Switch OLED'),platform:'Amazon',search:'Nintendo Switch OLED White',asin:'B098RL6SBJ',discount:10,rating:4.8,reviews:18700,freeShipping:true,badges:['top'],desc:'Pantalla OLED de 7", base con puerto LAN integrado, 64GB de memoria interna y batería de 4.5 a 9 horas.',specs:[{k:'Pantalla',v:'7" OLED'},{k:'Almac.',v:'64GB'},{k:'Batería',v:'4.5–9h'},{k:'Modos',v:'TV/Mesa/Portátil'},{k:'WiFi',v:'802.11ac'},{k:'USB',v:'USB-C'}]},
 
@@ -456,7 +462,154 @@ const PRODUCTS = [
   {id:45,cat:'smartwatch',brand:'Samsung',name:'Samsung Galaxy Watch 7 44mm',img:svgWatch('%230f2027','%23203a43','Watch 7'),platform:'MercadoLibre',search:'Samsung Galaxy Watch 7 44mm',asin:null,discount:14,rating:4.6,reviews:5400,freeShipping:true,badges:['new'],desc:'Sensor BioActive de nueva generación, Wear OS 5, batería de 40 horas y resistencia 5ATM + IP68.',specs:[{k:'CPU',v:'Exynos W1000'},{k:'RAM',v:'2GB'},{k:'Pantalla',v:'1.47" AMOLED'},{k:'Batería',v:'40 horas'},{k:'Resistencia',v:'5ATM+IP68'},{k:'OS',v:'Wear OS 5'}]},
 
   // TABLETS
-  {id:46,cat:'tablets',brand:'Apple',name:'iPad Air M2 11" WiFi 128GB',img:svgTablet('%23636e72','%232d3436','iPad Air M2'),platform:'Amazon',search:'iPad Air M2 11 inch WiFi 128GB',asin:'B0BJLF2BRM',discount:10,rating:4.8,reviews:7800,freeShipping:true,badges:['top','new','free'],desc:'Chip M2, pantalla Liquid Retina de 11", compatible con Apple Pencil Pro y Magic Keyboard.',specs:[{k:'Chip',v:'Apple M2'},{k:'Pantalla',v:'11" Liquid Retina'},{k:'Almac.',v:'128GB'},{k:'Cámara',v:'12MP'},{k:'Batería',v:'10 horas'},{k:'WiFi',v:'WiFi 6E'}]}
+  {id:46,cat:'tablets',brand:'Apple',name:'iPad Air M2 11" WiFi 128GB',img:svgTablet('%23636e72','%232d3436','iPad Air M2'),platform:'Amazon',search:'iPad Air M2 11 inch WiFi 128GB',asin:'B0BJLF2BRM',discount:10,rating:4.8,reviews:7800,freeShipping:true,badges:['top','new','free'],desc:'Chip M2, pantalla Liquid Retina de 11", compatible con Apple Pencil Pro y Magic Keyboard.',specs:[{k:'Chip',v:'Apple M2'},{k:'Pantalla',v:'11" Liquid Retina'},{k:'Almac.',v:'128GB'},{k:'Cámara',v:'12MP'},{k:'Batería',v:'10 horas'},{k:'WiFi',v:'WiFi 6E'}]},
+
+  // ===== LUXURY BEAUTY — 10% COMISIÓN =====
+  {id:47,cat:'beauty',brand:'Dyson',name:'Dyson Airwrap Complete Long Styler',
+   img:'https://m.media-amazon.com/images/I/71XnLIh6Q1L._SL1500_.jpg',
+   platform:'Amazon',search:'Dyson Airwrap Complete Long styler',asin:'B09GLNQX2G',
+   discount:0,rating:4.7,reviews:28400,freeShipping:true,
+   badges:['top','free'],
+   desc:'El styler más deseado del mundo. Riza, ondula, alisa y seca al mismo tiempo sin daño extremo. Incluye 6 accesorios. Comisión: 10% = $59 por venta.',
+   specs:[{k:'Accesorios',v:'6 incluidos'},{k:'Función',v:'Riza/Ondula/Alisa'},{k:'Motor',v:'Dyson digital'},{k:'Voltaje',v:'Universal'},{k:'Garantía',v:'2 años'}]},
+
+  {id:48,cat:'beauty',brand:'Olaplex',name:'Olaplex Hair Perfector No.3 — Kit Completo',
+   img:svgCoffee('%23c2185b','%23e91e8c','Olaplex Kit'),
+   platform:'Amazon',search:'Olaplex No 3 hair perfector treatment kit',asin:'B00SNM5US4',
+   discount:20,rating:4.6,reviews:89000,freeShipping:true,
+   badges:['top','sale','free'],
+   desc:'El tratamiento capilar más vendido del mundo. Repara el daño desde adentro, fortalece y protege. Más de 89.000 reseñas 5 estrellas.',
+   specs:[{k:'Tipo',v:'Tratamiento reparador'},{k:'Uso',v:'En casa'},{k:'Pelo',v:'Todo tipo'},{k:'Tamaño',v:'100ml'},{k:'Resultados',v:'Desde 1er uso'}]},
+
+  {id:49,cat:'beauty',brand:'La Mer',name:'La Mer Crème de la Mer Moisturizing Cream',
+   img:svgRobot('%230d47a1','%231565c0','La Mer Crème'),
+   platform:'Amazon',search:'La Mer Creme de la Mer moisturizing cream',asin:'B000FGDJ5E',
+   discount:0,rating:4.7,reviews:12400,freeShipping:true,
+   badges:['top','free'],
+   desc:'La crema de lujo más icónica del mundo. Miracle Broth™ que regenera la piel. Precio $190 = $19 de comisión por cada venta.',
+   specs:[{k:'Tamaño',v:'30ml'},{k:'Tipo',v:'Hidratante de lujo'},{k:'Ingrediente',v:'Miracle Broth™'},{k:'Piel',v:'Todo tipo'},{k:'Resultado',v:'Regeneración celular'}]},
+
+  {id:50,cat:'beauty',brand:'Dyson',name:'Dyson Supersonic Hair Dryer HD15',
+   img:svgAudio('%23ff6b9d','%23e91e8c','Dyson Supersonic'),
+   platform:'Amazon',search:'Dyson Supersonic hair dryer HD15',asin:'B0CG94RNPH',
+   discount:0,rating:4.8,reviews:19600,freeShipping:true,
+   badges:['top','free'],
+   desc:'El secador más potente y silencioso del mercado. Temperatura controlada para proteger el cabello. Motor Dyson V9 de alta velocidad.',
+   specs:[{k:'Motor',v:'Dyson V9'},{k:'Potencia',v:'1600W'},{k:'Temperatura',v:'Control inteligente'},{k:'Incluye',v:'5 accesorios'},{k:'Peso',v:'690g'}]},
+
+  {id:51,cat:'beauty',brand:'Charlotte Tilbury',name:'Charlotte Tilbury Magic Cream Moisturizer',
+   img:svgBand('%23f48fb1','%23e91e8c','Charlotte Cream'),
+   platform:'Amazon',search:'Charlotte Tilbury Magic Cream moisturizer',asin:'B0755TWFHB',
+   discount:0,rating:4.7,reviews:8900,freeShipping:true,
+   badges:['new','free'],
+   desc:'La crema favorita de las celebrities. 8 ingredientes activos que transforman la piel en 4 semanas. Efecto lifting visible.',
+   specs:[{k:'Tamaño',v:'50ml'},{k:'Activos',v:'8 ingredientes'},{k:'Resultado',v:'Lifting en 4 semanas'},{k:'Textura',v:'Rica y cremosa'},{k:'Aroma',v:'Floral suave'}]},
+
+  {id:52,cat:'beauty',brand:'Estée Lauder',name:'Estée Lauder Advanced Night Repair Serum',
+   img:'https://m.media-amazon.com/images/I/61MljB42UjL._SL1500_.jpg',
+   platform:'Amazon',search:'Estee Lauder Advanced Night Repair serum',asin:'B00Y8K7NCA',
+   discount:15,rating:4.8,reviews:45200,freeShipping:true,
+   badges:['top','sale','free'],
+   desc:'El sérum antiedad más vendido del mundo. Reduce arrugas, manchas y poros. 45.000+ reseñas 5 estrellas. Bestseller absoluto.',
+   specs:[{k:'Tamaño',v:'30ml'},{k:'Activo',v:'ChronoluxCB™'},{k:'Beneficio',v:'Antiedad múltiple'},{k:'Uso',v:'Noche'},{k:'Visible',v:'4 semanas'}]},
+
+  // ===== COCINA & HOGAR — 4.5% COMISIÓN =====
+  {id:53,cat:'cocina',brand:'KitchenAid',name:'KitchenAid Artisan Stand Mixer 5Qt',
+   img:'https://m.media-amazon.com/images/I/71dwD1MdoSL._AC_SL1500_.jpg',
+   platform:'Amazon',search:'KitchenAid Artisan Stand Mixer 5 quart',asin:'B00005UP2P',
+   discount:20,rating:4.8,reviews:32800,freeShipping:true,
+   badges:['top','sale','free'],
+   desc:'La batidora de pie más icónica del mundo. Motor de 325W, bowl de 5 cuartos, 10 velocidades y más de 15 accesorios opcionales.',
+   specs:[{k:'Motor',v:'325W'},{k:'Bowl',v:'4.7 litros'},{k:'Velocidades',v:'10'},{k:'Colores',v:'+20 opciones'},{k:'Garantía',v:'1 año'}]},
+
+  {id:54,cat:'cocina',brand:'Instant Pot',name:'Instant Pot Duo 7 en 1 Electric Pressure Cooker 6Qt',
+   img:'https://m.media-amazon.com/images/I/71lX5BofA0L._AC_SL1500_.jpg',
+   platform:'Amazon',search:'Instant Pot Duo 7 in 1 electric pressure cooker',asin:'B00FLYWNYQ',
+   discount:35,rating:4.7,reviews:156000,freeShipping:true,
+   badges:['top','sale','free'],
+   desc:'La olla más vendida de Amazon. 7 funciones en 1: olla a presión, slow cooker, arrocera, vaporera, salteadora, yogurtera y más.',
+   specs:[{k:'Capacidad',v:'6 cuartos'},{k:'Funciones',v:'7 en 1'},{k:'Programas',v:'14 presets'},{k:'Seguridad',v:'10 mecanismos'},{k:'Garantía',v:'1 año'}]},
+
+  {id:55,cat:'cocina',brand:'Ninja',name:'Ninja Foodi 11-en-1 Air Fryer + Pressure Cooker',
+   img:svgAirFryer('%230d47a1','%231565c0','Ninja Foodi'),
+   platform:'Amazon',search:'Ninja Foodi 11 in 1 air fryer pressure cooker',asin:'B07SQ1B27N',
+   discount:25,rating:4.7,reviews:28900,freeShipping:true,
+   badges:['top','sale','free'],
+   desc:'11 funciones: freidora de aire, olla a presión, slow cooker, deshidratador y más. El gadget de cocina más completo del mercado.',
+   specs:[{k:'Funciones',v:'11 en 1'},{k:'Capacidad',v:'6.5 cuartos'},{k:'Freidora',v:'Incluida'},{k:'Presión',v:'Sí'},{k:'Garantía',v:'1 año'}]},
+
+  {id:56,cat:'cocina',brand:'Vitamix',name:'Vitamix 5200 Professional Blender',
+   img:svgRobot('%231b5e20','%232e7d32','Vitamix 5200'),
+   platform:'Amazon',search:'Vitamix 5200 professional blender',asin:'B008H4SLV6',
+   discount:10,rating:4.8,reviews:21400,freeShipping:true,
+   badges:['top','free'],
+   desc:'La licuadora profesional más potente del mercado. Motor de 2HP, cuchillas de acero inoxidable y garantía de 7 años.',
+   specs:[{k:'Motor',v:'2 HP (1380W)'},{k:'Velocidades',v:'Variable'},{k:'Cuchillas',v:'Acero inox'},{k:'Capacidad',v:'2 litros'},{k:'Garantía',v:'7 años'}]},
+
+  {id:57,cat:'cocina',brand:'Breville',name:'Breville Barista Express Espresso Machine',
+   img:svgCoffee('%233e2723','%234e342e','Breville Barista'),
+   platform:'Amazon',search:'Breville Barista Express espresso machine',asin:'B006RBXDJA',
+   discount:15,rating:4.7,reviews:18600,freeShipping:true,
+   badges:['top','free'],
+   desc:'Café de barista en casa. Muele los granos frescos, extrae el espresso perfecto y texturiza la leche. Todo en una sola máquina.',
+   specs:[{k:'Presión',v:'9 bares'},{k:'Molinillo',v:'Integrado'},{k:'Caldera',v:'Thermocoil'},{k:'Capacidad',v:'2 litros'},{k:'Garantía',v:'2 años'}]},
+
+  {id:58,cat:'cocina',brand:'Le Creuset',name:'Le Creuset Signature Enameled Cast Iron 5.5Qt',
+   img:svgAirFryer('%23c62828','%23d32f2f','Le Creuset 5.5Qt'),
+   platform:'Amazon',search:'Le Creuset Signature enameled cast iron dutch oven 5.5 quart',asin:'B00440CDQY',
+   discount:0,rating:4.8,reviews:14200,freeShipping:true,
+   badges:['top','free'],
+   desc:'La cocotte más icónica del mundo. Hierro fundido esmaltado, distribución perfecta del calor y dura toda la vida.',
+   specs:[{k:'Material',v:'Hierro fundido'},{k:'Capacidad',v:'5.2 litros'},{k:'Apto',v:'Todas las cocinas'},{k:'Colores',v:'20+ opciones'},{k:'Garantía',v:'De por vida'}]},
+
+  // ===== MODA — 4-7% COMISIÓN =====
+  {id:59,cat:'moda',brand:'Nike',name:'Nike Air Max 270 — Hombre',
+   img:'https://m.media-amazon.com/images/I/61Tspqw1NEL._AC_SY695_.jpg',
+   platform:'Amazon',search:'Nike Air Max 270 men shoes',asin:'B07D9YDL27',
+   discount:25,rating:4.6,reviews:18400,freeShipping:true,
+   badges:['top','sale','free'],
+   desc:'Las zapatillas más cómodas de Nike. Air Max 270 con la unidad de aire más grande de Nike. Diseño lifestyle premium.',
+   specs:[{k:'Suela',v:'Air Max 270'},{k:'Upper',v:'Mesh transpirable'},{k:'Peso',v:'298g'},{k:'Tallas',v:'US 6-15'},{k:'Colores',v:'20+ opciones'}]},
+
+  {id:60,cat:'moda',brand:'Adidas',name:'Adidas Ultraboost 22 Running Shoes',
+   img:svgPhone('%23212121','%23424242','Adidas UB22'),
+   platform:'Amazon',search:'Adidas Ultraboost 22 running shoes men',asin:'B09FKXBHH6',
+   discount:30,rating:4.7,reviews:12800,freeShipping:true,
+   badges:['top','sale','free'],
+   desc:'La zapatilla de running más popular del mundo. Tecnología BOOST para máximo retorno de energía. Perfectas para correr y lifestyle.',
+   specs:[{k:'Tecnología',v:'BOOST'},{k:'Upper',v:'Primeknit+'},{k:'Peso',v:'312g'},{k:'Uso',v:'Running/Lifestyle'},{k:'Tallas',v:'US 6-15'}]},
+
+  {id:61,cat:'moda',brand:'The North Face',name:'The North Face Thermoball Eco Jacket',
+   img:svgLaptop('%230d47a1','%231565c0','TNF Thermoball'),
+   platform:'Amazon',search:'The North Face Thermoball Eco jacket men',asin:'B07H5HTMZF',
+   discount:20,rating:4.7,reviews:8900,freeShipping:true,
+   badges:['top','free'],
+   desc:'La campera más versátil de The North Face. Relleno ThermoBall Eco reciclado, impermeable y plegable en su propio bolsillo.',
+   specs:[{k:'Relleno',v:'ThermoBall Eco'},{k:'Resistencia',v:'Impermeable DWR'},{k:'Peso',v:'397g'},{k:'Plegable',v:'Sí'},{k:'Tallas',v:'XS-3XL'}]},
+
+  {id:62,cat:'moda',brand:'Levi\'s',name:'Levi\'s 501 Original Fit Jeans',
+   img:svgTablet('%231565c0','%231976d2','Levis 501'),
+   platform:'Amazon',search:'Levis 501 original fit jeans men',asin:'B000IU3YZI',
+   discount:20,rating:4.5,reviews:34600,freeShipping:true,
+   badges:['top','sale','free'],
+   desc:'El jean más icónico del mundo. Corte recto clásico, tela de denim premium y el estilo que nunca pasa de moda.',
+   specs:[{k:'Corte',v:'Straight/Regular'},{k:'Material',v:'100% Algodón'},{k:'Tiro',v:'Regular'},{k:'Tallas',v:'28-42'},{k:'Colores',v:'15+ opciones'}]},
+
+  {id:63,cat:'moda',brand:'Ray-Ban',name:'Ray-Ban Wayfarer Classic Sunglasses',
+   img:svgWatch('%23212121','%23424242','Ray-Ban WF'),
+   platform:'Amazon',search:'Ray-Ban Wayfarer Classic sunglasses',asin:'B001G7QT4S',
+   discount:15,rating:4.7,reviews:22100,freeShipping:true,
+   badges:['top','free'],
+   desc:'Los anteojos de sol más icónicos del mundo. Montura acetato clásica, lentes polarizadas y protección UV400.',
+   specs:[{k:'Montura',v:'Acetato'},{k:'Lentes',v:'Polarizadas'},{k:'UV',v:'UV400'},{k:'Incluye',v:'Estuche + paño'},{k:'Garantía',v:'2 años'}]},
+
+  {id:64,cat:'moda',brand:'Gucci',name:'Gucci GG Supreme Canvas Belt',
+   img:svgBand('%23827717','%23f9a825','Gucci Belt'),
+   platform:'Amazon',search:'Gucci GG Supreme canvas belt',asin:'B01N7VCO2E',
+   discount:0,rating:4.6,reviews:4200,freeShipping:true,
+   badges:['top','free'],
+   desc:'El cinturón más buscado de Amazon Luxury. Lona GG Supreme con hebilla dorada. Comisión del 10% en Luxury = $35 por venta.',
+   specs:[{k:'Material',v:'GG Supreme Canvas'},{k:'Hebilla',v:'Dorada'},{k:'Ancho',v:'3.5cm'},{k:'Tallas',v:'70-110'},{k:'Autenticidad',v:'100% Original'}]}
 ];
 
 // STATE
