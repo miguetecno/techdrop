@@ -310,9 +310,9 @@ footer{background:var(--ink);color:rgba(255,255,255,.65);margin-top:50px}
 
 <script>
 const AFF = { amazon:'techdropar-20' };
-function affLink(platform,search,asin){
+function affLink(platform,search,asin,mllink){
   if(platform==='Amazon') return asin?`https://www.amazon.com/dp/${asin}?tag=${AFF.amazon}`:`https://www.amazon.com/s?k=${encodeURIComponent(search)}&tag=${AFF.amazon}`;
-  if(platform==='MercadoLibre') return `https://listado.mercadolibre.com.ar/${encodeURIComponent(search)}`;
+  if(platform==='MercadoLibre') return mllink||`https://listado.mercadolibre.com.ar/${encodeURIComponent(search)}`;
   return `https://www.aliexpress.com/wholesale?SearchText=${encodeURIComponent(search)}`;
 }
 
@@ -370,13 +370,95 @@ const PRODUCTS = [
 
   {id:77,cat:'smartwatch',brand:'Apple',name:'Apple Watch Ultra 2 — Titanio 49mm',img:'https://m.media-amazon.com/images/I/61bRxzilc+L._AC_SL1500_.jpg',platform:'Amazon',search:'Apple Watch Ultra 2 titanium 49mm',asin:'B0CHX9N594',discount:0,rating:4.8,reviews:7600,freeShipping:true,badges:['new','top','free'],desc:'El Apple Watch más poderoso. Caja de titanio 49mm, hasta 60 horas de batería, resistencia extrema y GPS de doble frecuencia.',specs:[{k:'Caja',v:'Titanio 49mm'},{k:'Batería',v:'60 horas'},{k:'GPS',v:'Dual frecuencia'},{k:'Resistencia',v:'100m agua'},{k:'Pantalla',v:'LTPO OLED'},{k:'WatchOS',v:'11'}]},
 
-  {id:72,cat:'tablets',brand:'Apple',name:'iPad 11" chip A16 WiFi 128GB 2026',img:'https://m.media-amazon.com/images/I/61kGhnfKh0S._AC_SL1500_.jpg',platform:'Amazon',search:'Apple iPad 11 inch A16 chip WiFi 128GB 2026',asin:'B0DFY5TQWP',discount:0,rating:4.8,reviews:12400,freeShipping:true,badges:['new','top','free'],desc:'El nuevo iPad 2026 con chip A16, pantalla Liquid Retina de 11", cámara frontal 12MP, Touch ID y batería de todo el día.',specs:[{k:'Chip',v:'Apple A16'},{k:'Pantalla',v:'11" Liquid Retina'},{k:'Almac.',v:'128GB'},{k:'Cámara',v:'12MP frontal'},{k:'Batería',v:'Todo el día'},{k:'WiFi',v:'WiFi 6'}]},
+  {id:85,cat:'celulares',brand:'Samsung',name:'Samsung Galaxy A56 5G 128GB',
+   img:'https://fdn2.gsmarena.com/vv/pics/samsung/samsung-galaxy-a55-1.jpg',
+   platform:'MercadoLibre',search:'Samsung Galaxy A56 5G 128GB',asin:null,
+   mllink:'https://meli.la/2eqGqDN',
+   discount:12,rating:4.9,reviews:800,freeShipping:true,
+   badges:['new','top','free'],
+   desc:'El nuevo Samsung Galaxy A56 5G. Pantalla Super AMOLED 6.7" 120Hz, cámara 50MP con IA, 5G y batería de 5000mAh.',
+   specs:[{k:'Pantalla',v:'6.7" AMOLED 120Hz'},{k:'Cámara',v:'50MP IA'},{k:'RAM',v:'8GB'},{k:'Almac.',v:'128GB'},{k:'Batería',v:'5000mAh'},{k:'Red',v:'5G'}]},
 
-  {id:73,cat:'accesorios',brand:'Apple',name:'Apple AirTag 2ª Gen — Pack de 4',img:'https://m.media-amazon.com/images/I/6175zcenM4L._AC_SL1500_.jpg',platform:'Amazon',search:'Apple AirTag 2nd generation 4 pack',asin:'B0DJKK1Z9B',discount:0,rating:4.8,reviews:18600,freeShipping:true,badges:['new','top','free'],desc:'Localizador Apple de 2ª generación. Encontrá llaves, billetera, mochila. Rango 1.5x mayor. Configuración con un toque en iPhone.',specs:[{k:'Generación',v:'2ª Gen'},{k:'Rango',v:'1.5x mayor'},{k:'Compatible',v:'iPhone/iPad'},{k:'Batería',v:'1 año'},{k:'Resistencia',v:'IP67'},{k:'Red',v:'Find My'}]},
+  {id:80,cat:'celulares',brand:'Samsung',name:'Samsung Galaxy A16 128GB 4G — Más Vendido ML',
+   img:'https://m.media-amazon.com/images/I/51l6C2LeZFL._AC_SL1000_.jpg',
+   platform:'MercadoLibre',search:'Samsung Galaxy A16 128GB',asin:null,
+   mllink:'https://meli.la/1ECbLcU',
+   discount:11,rating:4.8,reviews:10000,freeShipping:true,
+   badges:['top','sale','free'],
+   desc:'El Samsung más vendido en Argentina. Pantalla AMOLED 6.7", cámara 50MP, 128GB, 4GB RAM y batería de 5000mAh. Envío FULL.',
+   specs:[{k:'Pantalla',v:'6.7" AMOLED'},{k:'Cámara',v:'50MP'},{k:'RAM',v:'4GB'},{k:'Almac.',v:'128GB'},{k:'Batería',v:'5000mAh'},{k:'Red',v:'4G LTE'}]},
 
-  {id:74,cat:'hogar',brand:'Amazon',name:'Fire TV Stick 4K Plus — Búsqueda con IA',img:'https://m.media-amazon.com/images/I/51xrXQOA-LL._AC_SL1500_.jpg',platform:'Amazon',search:'Amazon Fire TV Stick 4K Plus latest model AI search',asin:'B0CFM7GLQY',discount:20,rating:4.6,reviews:42000,freeShipping:true,badges:['top','sale','free'],desc:'El Fire TV más potente. Búsqueda con IA, WiFi 6, streaming 4K HDR, miles de películas y series gratis. Alexa incluida.',specs:[{k:'Resolución',v:'4K Ultra HD'},{k:'WiFi',v:'WiFi 6'},{k:'IA',v:'Búsqueda inteligente'},{k:'HDR',v:'HDR10+ / Dolby Vision'},{k:'Alexa',v:'Incluida'},{k:'Contenido',v:'Miles de apps'}]},
+  {id:81,cat:'celulares',brand:'Motorola',name:'Motorola Moto G15 512GB — Top Ventas ML',
+   img:'https://fdn2.gsmarena.com/vv/pics/motorola/motorola-moto-g15-1.jpg',
+   platform:'MercadoLibre',search:'Motorola Moto G15 512GB',asin:null,
+   mllink:'https://meli.la/1KxgoF9',
+   discount:15,rating:4.7,reviews:5000,freeShipping:true,
+   badges:['top','sale','free'],
+   desc:'El Motorola más vendido en Argentina. 512GB de almacenamiento, pantalla 6.7" IPS, cámara 50MP y batería de 5000mAh.',
+   specs:[{k:'Pantalla',v:'6.7" IPS'},{k:'Cámara',v:'50MP'},{k:'RAM',v:'4GB'},{k:'Almac.',v:'512GB'},{k:'Batería',v:'5000mAh'},{k:'Red',v:'4G'}]},
 
-  {id:75,cat:'laptops',brand:'Apple',name:'MacBook Neo 2026 13" chip A18 Pro 8GB',img:'https://m.media-amazon.com/images/I/71V0S7n155L._AC_SY695_.jpg',platform:'Amazon',search:'Apple MacBook Neo 2026 13 inch A18 Pro',asin:'B0DXKQ8WFP',discount:0,rating:4.9,reviews:3200,freeShipping:true,badges:['new','top','free'],desc:'El MacBook más deseado de 2026. Chip A18 Pro diseñado para IA y Apple Intelligence, pantalla Liquid Retina y batería extraordinaria.',specs:[{k:'Chip',v:'Apple A18 Pro'},{k:'RAM',v:'8GB unificada'},{k:'Pantalla',v:'13" Liquid Retina'},{k:'IA',v:'Apple Intelligence'},{k:'Batería',v:'Extraordinaria'},{k:'Peso',v:'Ultra liviano'}]},
+  {id:82,cat:'celulares',brand:'Xiaomi',name:'Xiaomi Redmi 15C 128GB — Mejor Precio ML',
+   img:'https://fdn2.gsmarena.com/vv/pics/xiaomi/xiaomi-redmi-14c-1.jpg',
+   platform:'MercadoLibre',search:'Xiaomi Redmi 15C 128GB',asin:null,
+   mllink:'https://meli.la/2wnMvbj',
+   discount:20,rating:4.7,reviews:4500,freeShipping:true,
+   badges:['sale','top','free'],
+   desc:'Xiaomi Redmi 15C con pantalla 6.88" 120Hz, cámara 50MP, 128GB y batería de 5160mAh con carga rápida.',
+   specs:[{k:'Pantalla',v:'6.88" 120Hz'},{k:'Cámara',v:'50MP'},{k:'RAM',v:'4GB'},{k:'Almac.',v:'128GB'},{k:'Batería',v:'5160mAh'},{k:'Red',v:'4G'}]},
+
+  {id:88,cat:'gaming',brand:'Sony',name:'PlayStation 5 Slim Digital — MercadoLibre',
+   img:'https://m.media-amazon.com/images/I/616X8zng9wS._AC_SL1500_.jpg',
+   platform:'MercadoLibre',search:'PlayStation 5 Slim Digital',asin:null,
+   mllink:'https://meli.la/2fjgw3p',
+   discount:10,rating:4.9,reviews:12000,freeShipping:true,
+   badges:['top','free'],
+   desc:'PlayStation 5 Slim Digital Edition en MercadoLibre Argentina. SSD 1TB, ray-tracing, 120fps y DualSense.',
+   specs:[{k:'CPU',v:'AMD Zen 2 8-core'},{k:'GPU',v:'10.28 TFLOPS'},{k:'RAM',v:'16GB GDDR6'},{k:'SSD',v:'1TB'},{k:'FPS',v:'Hasta 120fps'},{k:'Red',v:'WiFi 6'}]},
+
+  {id:87,cat:'audio',brand:'Sony',name:'Sony WH-1000XM5 Noise Cancelling — ML',
+   img:'https://m.media-amazon.com/images/I/61vJtKbAssL._AC_SL1500_.jpg',
+   platform:'MercadoLibre',search:'Sony WH-1000XM5',asin:null,
+   mllink:'https://meli.la/2ZHbpab',
+   discount:20,rating:4.9,reviews:8400,freeShipping:true,
+   badges:['top','sale','free'],
+   desc:'Los mejores auriculares del mundo disponibles en MercadoLibre Argentina. Cancelación de ruido líder, 30h batería.',
+   specs:[{k:'ANC',v:'Industry Leading'},{k:'Batería',v:'30 horas'},{k:'BT',v:'5.2'},{k:'Drivers',v:'30mm'},{k:'Peso',v:'250g'},{k:'Garantía',v:'1 año'}]},
+
+  {id:83,cat:'electro',brand:'Philco',name:'Freidora de Aire Philco 6L 1700W',
+   img:'https://http2.mlstatic.com/D_NQ_NP_914848-MLA71892946446_092023-O.webp',
+   platform:'MercadoLibre',search:'Freidora de aire Philco 6L',asin:null,
+   mllink:'https://meli.la/2aCd8kU',
+   discount:25,rating:4.6,reviews:3200,freeShipping:true,
+   badges:['top','sale','free'],
+   desc:'La freidora de aire más vendida en Argentina. 6 litros, 1700W, 12 programas de cocción y pantalla digital. Sin aceite.',
+   specs:[{k:'Capacidad',v:'6 litros'},{k:'Potencia',v:'1700W'},{k:'Programas',v:'12'},{k:'Panel',v:'Digital'},{k:'Grasa',v:'Sin aceite'},{k:'Garantía',v:'1 año'}]},
+
+  {id:84,cat:'electro',brand:'Samsung',name:'Smart TV Samsung 55" Crystal 4K UHD',
+   img:'https://http2.mlstatic.com/D_NQ_NP_773870-MLA71840148965_092023-O.webp',
+   platform:'MercadoLibre',search:'Smart TV Samsung 55 4K',asin:null,
+   mllink:'https://meli.la/2f7opDd',
+   discount:18,rating:4.7,reviews:2800,freeShipping:true,
+   badges:['top','free'],
+   desc:'Smart TV Samsung 55" Crystal 4K UHD, HDR, Tizen OS, 3 HDMI, 2 USB y sonido Dolby Digital Plus.',
+   specs:[{k:'Pantalla',v:'55" Crystal 4K'},{k:'HDR',v:'HDR10+'},{k:'OS',v:'Tizen'},{k:'HDMI',v:'3 puertos'},{k:'USB',v:'2 puertos'},{k:'Sonido',v:'Dolby Digital+'}]},
+
+  {id:86,cat:'laptops',brand:'Lenovo',name:'Notebook Lenovo IdeaPad 3 Core i5 16GB',
+   img:'https://p3-ofp.static.pub/fes/cms/2022/09/01/p4ry3u5ocm9ixwsv9tfafbgzlqrn7b808928.png',
+   platform:'MercadoLibre',search:'Notebook Lenovo IdeaPad Core i5 16GB',asin:null,
+   mllink:'https://meli.la/1j85kch',
+   discount:15,rating:4.5,reviews:1800,freeShipping:true,
+   badges:['sale','free'],
+   desc:'Notebook Lenovo IdeaPad Core i5, 16GB RAM, SSD 512GB, pantalla Full HD 15.6" y Windows 11. Ideal para trabajo y estudio.',
+   specs:[{k:'CPU',v:'Intel Core i5'},{k:'RAM',v:'16GB DDR4'},{k:'SSD',v:'512GB NVMe'},{k:'Pantalla',v:'15.6" FHD'},{k:'OS',v:'Windows 11'},{k:'Batería',v:'8 horas'}]},
+
+  {id:89,cat:'electro',brand:'Samsung',name:'Lavarropas Samsung 8kg Carga Frontal',
+   img:'https://http2.mlstatic.com/D_NQ_NP_773870-MLA71840148965_092023-O.webp',
+   platform:'MercadoLibre',search:'Lavarropas Samsung 8kg carga frontal',asin:null,
+   mllink:'https://meli.la/1qQzJ4X',
+   discount:20,rating:4.7,reviews:2100,freeShipping:true,
+   badges:['top','sale','free'],
+   desc:'Lavarropas Samsung 8kg carga frontal con tecnología Digital Inverter, 14 programas y clasificación energética A+++.',
+   specs:[{k:'Capacidad',v:'8 kg'},{k:'Carga',v:'Frontal'},{k:'Programas',v:'14'},{k:'RPM',v:'1200'},{k:'Energía',v:'A+++'},{k:'Garantía',v:'2 años'}]},
 
   {id:65,cat:'audio',brand:'Apple',name:'Apple AirPods 4 Active Noise Cancelling',img:'https://m.media-amazon.com/images/I/61iBtxCUabL._AC_SL1500_.jpg',platform:'Amazon',search:'Apple AirPods 4 active noise cancelling',asin:'B0DGHRMQL8',discount:0,rating:4.8,reviews:48200,freeShipping:true,badges:['top','new','free'],desc:'El #1 mas vendido en electronica de Amazon 2026. ANC activa, chip H2, resistencia IP54 y hasta 30 horas de bateria total.',specs:[{k:'Chip',v:'H2'},{k:'ANC',v:'Activa'},{k:'Bateria',v:'30h total'},{k:'Resistencia',v:'IP54'},{k:'Carga',v:'USB-C/MagSafe'},{k:'Compatible',v:'iPhone/Android'}]},
 
@@ -391,6 +473,12 @@ const PRODUCTS = [
   {id:6,cat:'celulares',brand:'Apple',name:'iPhone 15 128GB — Desbloqueado',img:'https://m.media-amazon.com/images/I/51-RPOw693L._AC_SL1200_.jpg',platform:'Amazon',search:'iPhone 15 128GB unlocked',asin:'B0CHX3QBCH',discount:10,rating:4.8,reviews:21400,freeShipping:true,badges:['top','free'],desc:'Chip A16 Bionic, cámara principal de 48MP con modo retrato, Dynamic Island, USB-C y hasta 26 horas de reproducción de video.',specs:[{k:'Chip',v:'A16 Bionic'},{k:'Pantalla',v:'6.1" OLED'},{k:'Cámara',v:'48MP'},{k:'Almac.',v:'128GB'},{k:'Batería',v:'26h video'},{k:'Puerto',v:'USB-C'}]},
 
   {id:11,cat:'laptops',brand:'Apple',name:'MacBook Air M3 13" 8GB 256GB',img:'https://m.media-amazon.com/images/I/71igjFyr56L._AC_SL1500_.jpg',platform:'Amazon',search:'MacBook Air M3 13 inch',asin:'B0CX22VFXW',discount:8,rating:4.9,reviews:5600,freeShipping:true,badges:['top'],desc:'Chip Apple M3, 18 horas de batería, pantalla Liquid Retina de 13.6", diseño ultradelgado sin ventilador.',specs:[{k:'Chip',v:'Apple M3'},{k:'RAM',v:'8GB unificada'},{k:'SSD',v:'256GB'},{k:'Pantalla',v:'13.6" Retina'},{k:'Batería',v:'18 horas'},{k:'Peso',v:'1.24 kg'}]},
+
+  {id:72,cat:'tablets',brand:'Apple',name:'iPad 11" chip A16 WiFi 128GB 2026',img:'https://m.media-amazon.com/images/I/61kGhnfKh0S._AC_SL1500_.jpg',platform:'Amazon',search:'Apple iPad 11 inch A16 chip WiFi 128GB 2026',asin:'B0DFY5TQWP',discount:0,rating:4.8,reviews:12400,freeShipping:true,badges:['new','top','free'],desc:'El nuevo iPad 2026 con chip A16, pantalla Liquid Retina de 11", cámara frontal 12MP, Touch ID y batería de todo el día.',specs:[{k:'Chip',v:'Apple A16'},{k:'Pantalla',v:'11" Liquid Retina'},{k:'Almac.',v:'128GB'},{k:'Cámara',v:'12MP frontal'},{k:'Batería',v:'Todo el día'},{k:'WiFi',v:'WiFi 6'}]},
+
+  {id:73,cat:'accesorios',brand:'Apple',name:'Apple AirTag 2ª Gen — Pack de 4',img:'https://m.media-amazon.com/images/I/6175zcenM4L._AC_SL1500_.jpg',platform:'Amazon',search:'Apple AirTag 2nd generation 4 pack',asin:'B0DJKK1Z9B',discount:0,rating:4.8,reviews:18600,freeShipping:true,badges:['new','top','free'],desc:'Localizador Apple de 2ª generación. Encontrá llaves, billetera, mochila. Rango 1.5x mayor. Configuración con un toque en iPhone.',specs:[{k:'Generación',v:'2ª Gen'},{k:'Rango',v:'1.5x mayor'},{k:'Compatible',v:'iPhone/iPad'},{k:'Batería',v:'1 año'},{k:'Resistencia',v:'IP67'},{k:'Red',v:'Find My'}]},
+
+  {id:75,cat:'laptops',brand:'Apple',name:'MacBook Neo 2026 13" chip A18 Pro 8GB',img:'https://m.media-amazon.com/images/I/71V0S7n155L._AC_SY695_.jpg',platform:'Amazon',search:'Apple MacBook Neo 2026 13 inch A18 Pro',asin:'B0DXKQ8WFP',discount:0,rating:4.9,reviews:3200,freeShipping:true,badges:['new','top','free'],desc:'El MacBook más deseado de 2026. Chip A18 Pro diseñado para IA y Apple Intelligence, pantalla Liquid Retina y batería extraordinaria.',specs:[{k:'Chip',v:'Apple A18 Pro'},{k:'RAM',v:'8GB unificada'},{k:'Pantalla',v:'13" Liquid Retina'},{k:'IA',v:'Apple Intelligence'},{k:'Batería',v:'Extraordinaria'},{k:'Peso',v:'Ultra liviano'}]},
 
   {id:54,cat:'cocina',brand:'Instant Pot',name:'Instant Pot Duo 7 en 1 Electric Pressure Cooker 6Qt',
    img:'https://m.media-amazon.com/images/I/71lX5BofA0L._AC_SL1500_.jpg',
@@ -464,6 +552,8 @@ const PRODUCTS = [
    badges:['top','free'],
    desc:'Los anteojos de sol más icónicos del mundo. Montura acetato clásica, lentes polarizadas y protección UV400.',
    specs:[{k:'Montura',v:'Acetato'},{k:'Lentes',v:'Polarizadas'},{k:'UV',v:'UV400'},{k:'Incluye',v:'Estuche + paño'},{k:'Garantía',v:'2 años'}]},
+
+  {id:74,cat:'hogar',brand:'Amazon',name:'Fire TV Stick 4K Plus — Búsqueda con IA',img:'https://m.media-amazon.com/images/I/51xrXQOA-LL._AC_SL1500_.jpg',platform:'Amazon',search:'Amazon Fire TV Stick 4K Plus latest model AI search',asin:'B0CFM7GLQY',discount:20,rating:4.6,reviews:42000,freeShipping:true,badges:['top','sale','free'],desc:'El Fire TV más potente. Búsqueda con IA, WiFi 6, streaming 4K HDR, miles de películas y series gratis. Alexa incluida.',specs:[{k:'Resolución',v:'4K Ultra HD'},{k:'WiFi',v:'WiFi 6'},{k:'IA',v:'Búsqueda inteligente'},{k:'HDR',v:'HDR10+ / Dolby Vision'},{k:'Alexa',v:'Incluida'},{k:'Contenido',v:'Miles de apps'}]},
 
   {id:2,cat:'celulares',brand:'Xiaomi',name:'Xiaomi Redmi 14C 128GB 4G',img:svgPhone('%23f7971e','%23ffd200','%23ff6600','Redmi 14C'),platform:'MercadoLibre',search:'Xiaomi Redmi 14C 128GB',asin:null,discount:20,rating:4.5,reviews:9400,freeShipping:true,badges:['top','sale','free'],desc:'El celular más vendido de Xiaomi en Argentina 2026. Pantalla de 6.88" a 120Hz, cámara de 50MP, batería de 5160mAh con carga rápida.',specs:[{k:'Pantalla',v:'6.88" 120Hz'},{k:'Cámara',v:'50MP'},{k:'RAM',v:'6GB'},{k:'Almac.',v:'128GB'},{k:'Batería',v:'5160mAh'},{k:'Carga',v:'Rápida'}]},
 
@@ -638,6 +728,7 @@ const PRODUCTS = [
   // CELULARES
   {id:1,cat:'celulares',brand:'Samsung',name:'Samsung Galaxy A06 64GB 4G',img:'https://m.media-amazon.com/images/I/51l6C2LeZFL._AC_SL1000_.jpg',platform:'MercadoLibre',search:'Samsung Galaxy A06 64GB',asin:null,discount:15,rating:4.4,reviews:12800,freeShipping:true,badges:['top','free'],desc:'El Samsung más vendido en Argentina. Pantalla de 6.7" IPS, cámara de 50MP con IA, batería de 5000mAh y Android 14. Garantía oficial Samsung Argentina.',specs:[{k:'Pantalla',v:'6.7" IPS LCD'},{k:'Cámara',v:'50MP + 2MP'},{k:'RAM',v:'4GB'},{k:'Almac.',v:'64GB'},{k:'Batería',v:'5000mAh'},{k:'Red',v:'4G LTE'}]},
 ,
+,
 ];
 
 // STATE
@@ -688,7 +779,7 @@ function openModal(id){
   const btn=document.getElementById('modalBuyBtn');
   btn.className='modal-buy '+(p.platform==='Amazon'?'amazon':p.platform==='MercadoLibre'?'ml':'ali');
   btn.innerHTML=`Ver precio real en ${p.platform} →`;
-  btn.onclick=()=>{window.open(affLink(p.platform,p.search,p.asin),'_blank');showToast(`🚀 Abriendo ${p.platform}...`);closeModal();};
+  btn.onclick=()=>{window.open(affLink(p.platform,p.search,p.asin,p.mllink),'_blank');showToast(`🚀 Abriendo ${p.platform}...`);closeModal();};
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow='hidden';
 }
@@ -696,7 +787,7 @@ function closeModal(){document.getElementById('modalOverlay').classList.remove('
 
 function goStore(id){
   const p=PRODUCTS.find(x=>x.id===id);
-  window.open(affLink(p.platform,p.search,p.asin),'_blank');
+  window.open(affLink(p.platform,p.search,p.asin,p.mllink),'_blank');
   showToast(`🚀 Abriendo ${p.platform}...`);
   if(!cart.find(x=>x.id===id)){cart.push({...p});updateCart();}
 }
