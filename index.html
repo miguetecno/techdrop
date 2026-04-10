@@ -513,14 +513,6 @@ const PRODUCTS = [
    desc:'La licuadora profesional más potente del mercado. Motor de 2HP, cuchillas de acero inoxidable y garantía de 7 años.',
    specs:[{k:'Motor',v:'2 HP (1380W)'},{k:'Velocidades',v:'Variable'},{k:'Cuchillas',v:'Acero inox'},{k:'Capacidad',v:'2 litros'},{k:'Garantía',v:'7 años'}]},
 
-  {id:57,cat:'cocina',brand:'Breville',name:'Breville Barista Express Espresso Machine',
-   img:svgCoffee('%233e2723','%234e342e','Breville Barista'),
-   platform:'Amazon',search:'Breville Barista Express espresso machine',asin:'B006RBXDJA',
-   discount:15,rating:4.7,reviews:18600,freeShipping:true,
-   badges:['top','free'],
-   desc:'Café de barista en casa. Muele los granos frescos, extrae el espresso perfecto y texturiza la leche. Todo en una sola máquina.',
-   specs:[{k:'Presión',v:'9 bares'},{k:'Molinillo',v:'Integrado'},{k:'Caldera',v:'Thermocoil'},{k:'Capacidad',v:'2 litros'},{k:'Garantía',v:'2 años'}]},
-
   {id:55,cat:'cocina',brand:'Ninja',name:'Ninja Foodi 11-en-1 Air Fryer + Pressure Cooker',
    img:'https://m.media-amazon.com/images/I/712xzIXamaL._AC_SL1500_.jpg',
    platform:'Amazon',search:'Ninja Foodi 11 in 1 air fryer pressure cooker',asin:'B07SQ1B27N',
@@ -555,95 +547,15 @@ const PRODUCTS = [
 
   {id:74,cat:'hogar',brand:'Amazon',name:'Fire TV Stick 4K Plus — Búsqueda con IA',img:'https://m.media-amazon.com/images/I/51xrXQOA-LL._AC_SL1500_.jpg',platform:'Amazon',search:'Amazon Fire TV Stick 4K Plus latest model AI search',asin:'B0CFM7GLQY',discount:20,rating:4.6,reviews:42000,freeShipping:true,badges:['top','sale','free'],desc:'El Fire TV más potente. Búsqueda con IA, WiFi 6, streaming 4K HDR, miles de películas y series gratis. Alexa incluida.',specs:[{k:'Resolución',v:'4K Ultra HD'},{k:'WiFi',v:'WiFi 6'},{k:'IA',v:'Búsqueda inteligente'},{k:'HDR',v:'HDR10+ / Dolby Vision'},{k:'Alexa',v:'Incluida'},{k:'Contenido',v:'Miles de apps'}]},
 
-  {id:2,cat:'celulares',brand:'Xiaomi',name:'Xiaomi Redmi 14C 128GB 4G',img:svgPhone('%23f7971e','%23ffd200','%23ff6600','Redmi 14C'),platform:'MercadoLibre',search:'Xiaomi Redmi 14C 128GB',asin:null,discount:20,rating:4.5,reviews:9400,freeShipping:true,badges:['top','sale','free'],desc:'El celular más vendido de Xiaomi en Argentina 2026. Pantalla de 6.88" a 120Hz, cámara de 50MP, batería de 5160mAh con carga rápida.',specs:[{k:'Pantalla',v:'6.88" 120Hz'},{k:'Cámara',v:'50MP'},{k:'RAM',v:'6GB'},{k:'Almac.',v:'128GB'},{k:'Batería',v:'5160mAh'},{k:'Carga',v:'Rápida'}]},
-
-  {id:3,cat:'celulares',brand:'Motorola',name:'Motorola Moto G54 Power 5G 256GB',img:svgPhone('%23667eea','%23764ba2','%234a00e0','Moto G54'),platform:'MercadoLibre',search:'Motorola Moto G54 Power 5G 256GB',asin:null,discount:18,rating:4.6,reviews:7200,freeShipping:true,badges:['top','free'],desc:'5G, batería de 6000mAh, pantalla Full HD+ de 6.5" a 120Hz y procesador Dimensity 7020. Uno de los más buscados en Argentina.',specs:[{k:'Pantalla',v:'6.5" FHD+ 120Hz'},{k:'CPU',v:'Dimensity 7020'},{k:'RAM',v:'8GB'},{k:'Almac.',v:'256GB'},{k:'Batería',v:'6000mAh'},{k:'Red',v:'5G'}]},
-
-  {id:4,cat:'celulares',brand:'Samsung',name:'Samsung Galaxy A55 5G 256GB',img:svgPhone('%230f3460','%2316213e','%230052ff','Galaxy A55'),platform:'MercadoLibre',search:'Samsung Galaxy A55 5G 256GB',asin:null,discount:12,rating:4.7,reviews:8100,freeShipping:true,badges:['new','free'],desc:'Pantalla Super AMOLED de 6.6" a 120Hz, cámara triple de 50MP con OIS, procesador Exynos 1480 y 5G.',specs:[{k:'Pantalla',v:'6.6" AMOLED 120Hz'},{k:'Cámara',v:'50MP OIS'},{k:'RAM',v:'8GB'},{k:'Almac.',v:'256GB'},{k:'Batería',v:'5000mAh'},{k:'Red',v:'5G'}]},
-
-  {id:5,cat:'celulares',brand:'Xiaomi',name:'Xiaomi Redmi Note 14 Pro 5G 256GB',img:svgPhone('%23e96c26','%23ff6a00','%23cc3300','Note 14 Pro'),platform:'MercadoLibre',search:'Xiaomi Redmi Note 14 Pro 5G 256GB',asin:null,discount:25,rating:4.7,reviews:6300,freeShipping:true,badges:['sale','top','free'],desc:'Cámara de 200MP, pantalla AMOLED de 6.67" a 120Hz, procesador Snapdragon 7s Gen 3, 5G y carga de 45W.',specs:[{k:'Pantalla',v:'6.67" AMOLED 120Hz'},{k:'Cámara',v:'200MP'},{k:'RAM',v:'8GB'},{k:'Almac.',v:'256GB'},{k:'Carga',v:'45W'},{k:'Red',v:'5G'}]},
-
-  {id:7,cat:'celulares',brand:'Motorola',name:'Motorola Edge 50 Neo 256GB 5G',img:svgPhone('%2300b09b','%2396c93d','%23008800','Edge 50 Neo'),platform:'MercadoLibre',search:'Motorola Edge 50 Neo 256GB 5G',asin:null,discount:22,rating:4.6,reviews:4100,freeShipping:true,badges:['sale','new'],desc:'Pantalla pOLED de 6.36" a 120Hz, cámara de 50MP con Telephoto, procesador Dimensity 7300 y carga de 68W.',specs:[{k:'Pantalla',v:'6.36" pOLED 120Hz'},{k:'Cámara',v:'50MP + Telephoto'},{k:'RAM',v:'8GB'},{k:'Almac.',v:'256GB'},{k:'Carga',v:'68W'},{k:'Red',v:'5G'}]},
-
-  {id:8,cat:'celulares',brand:'Samsung',name:'Samsung Galaxy S24 FE 5G 256GB',img:svgPhone('%231a1a2e','%2316213e','%230052cc','Galaxy S24 FE'),platform:'MercadoLibre',search:'Samsung Galaxy S24 FE 256GB 5G',asin:null,discount:8,rating:4.6,reviews:8200,freeShipping:true,badges:['top'],desc:'Galaxy IA. Pantalla Dynamic AMOLED 6.7", cámara de 50MP con Galaxy AI, procesador Exynos 2500 y batería de 4700mAh.',specs:[{k:'Pantalla',v:'6.7" AMOLED 120Hz'},{k:'Cámara',v:'50MP AI'},{k:'RAM',v:'8GB'},{k:'Almac.',v:'256GB'},{k:'Batería',v:'4700mAh'},{k:'Red',v:'5G'}]},
-
-  // LAPTOPS
-  {id:9,cat:'laptops',brand:'HP',name:'HP 15s Ryzen 5 16GB 512GB SSD',img:svgLaptop('%230f2027','%23203a43','HP 15s'),platform:'MercadoLibre',search:'HP 15 Ryzen 5 7520U 16GB 512GB',asin:null,discount:20,rating:4.5,reviews:3200,freeShipping:true,badges:['sale','free'],desc:'AMD Ryzen 5 7520U, 16GB DDR5, SSD 512GB, pantalla Full HD 15.6" y Windows 11. Ideal para trabajo y estudio.',specs:[{k:'CPU',v:'AMD Ryzen 5 7520U'},{k:'RAM',v:'16GB DDR5'},{k:'SSD',v:'512GB NVMe'},{k:'Pantalla',v:'15.6" FHD'},{k:'GPU',v:'Radeon 610M'},{k:'OS',v:'Windows 11'}]},
-
-  {id:10,cat:'laptops',brand:'Lenovo',name:'Lenovo IdeaPad 3 Core i5 16GB 512GB',img:svgLaptop('%23f953c6','%23b91d73','Lenovo IP3'),platform:'MercadoLibre',search:'Lenovo IdeaPad 3 Core i5 16GB 512GB',asin:null,discount:15,rating:4.4,reviews:2800,freeShipping:true,badges:['sale'],desc:'Core i5 12ª gen, 16GB RAM, SSD 512GB, pantalla Full HD 15.6" y batería de hasta 9 horas.',specs:[{k:'CPU',v:'Intel Core i5-1235U'},{k:'RAM',v:'16GB DDR4'},{k:'SSD',v:'512GB'},{k:'Pantalla',v:'15.6" FHD'},{k:'Batería',v:'9 horas'},{k:'OS',v:'Windows 11'}]},
-
-  {id:12,cat:'laptops',brand:'Dell',name:'Dell Inspiron 15 Core i5 16GB 512GB',img:svgLaptop('%231e3c72','%232a5298','Dell Inspiron'),platform:'Amazon',search:'Dell Inspiron 15 Core i5 16GB',asin:'B0CSTLJK2D',discount:18,rating:4.5,reviews:4100,freeShipping:true,badges:['sale','free'],desc:'Intel Core i5 13ª gen, 16GB RAM, SSD 512GB, pantalla Full HD 15.6", Wi-Fi 6 y Windows 11.',specs:[{k:'CPU',v:'Intel Core i5-1335U'},{k:'RAM',v:'16GB DDR4'},{k:'SSD',v:'512GB NVMe'},{k:'Pantalla',v:'15.6" FHD'},{k:'WiFi',v:'Wi-Fi 6'},{k:'OS',v:'Windows 11'}]},
-
-  {id:13,cat:'laptops',brand:'Lenovo',name:'Lenovo LOQ 15 Gaming RTX 4060',img:svgLaptop('%2311998e','%232d3561','LOQ Gaming'),platform:'Amazon',search:'Lenovo LOQ 15 RTX 4060 gaming laptop',asin:'B0CV1WT2XT',discount:12,rating:4.7,reviews:2900,freeShipping:true,badges:['top','new'],desc:'RTX 4060 8GB, Core i7 13ª gen, 16GB RAM DDR5, SSD 512GB, pantalla 15.6" a 144Hz. La gaming laptop más vendida.',specs:[{k:'CPU',v:'Intel Core i7-13620H'},{k:'GPU',v:'RTX 4060 8GB'},{k:'RAM',v:'16GB DDR5'},{k:'SSD',v:'512GB NVMe'},{k:'Pantalla',v:'15.6" 144Hz'},{k:'OS',v:'Windows 11'}]},
-
-  // ELECTRODOMÉSTICOS
-  {id:14,cat:'electro',brand:'Samsung',name:'Lavarropas Samsung 9kg Carga Frontal',img:svgWash('%230f2027','%23203a43','Samsung 9kg'),platform:'MercadoLibre',search:'lavarropas Samsung 9kg carga frontal',asin:null,discount:20,rating:4.7,reviews:3200,freeShipping:true,badges:['sale','top','free'],desc:'Lavarropas carga frontal 9kg con tecnología Digital Inverter, 14 programas de lavado, vapor y clasificación energética A+++.',specs:[{k:'Capacidad',v:'9 kg'},{k:'Carga',v:'Frontal'},{k:'Programas',v:'14'},{k:'RPM',v:'1400'},{k:'Energía',v:'A+++'},{k:'Garantía',v:'2 años'}]},
-
-  {id:15,cat:'electro',brand:'LG',name:'Heladera LG French Door 428L No Frost',img:svgFridge('%23457fca','%235691c8','LG 428L'),platform:'MercadoLibre',search:'heladera LG French Door 428L no frost',asin:null,discount:15,rating:4.6,reviews:1800,freeShipping:true,badges:['top','free'],desc:'French Door 428 litros, No Frost total, compresor Linear Inverter, panel digital, dispensador de agua y clasificación A+.',specs:[{k:'Capacidad',v:'428 litros'},{k:'Tipo',v:'French Door'},{k:'No Frost',v:'Total'},{k:'Energía',v:'A+'},{k:'Compresor',v:'Linear Inverter'},{k:'Color',v:'Acero inox'}]},
-
-  {id:16,cat:'electro',brand:'Philips',name:'Aire Acondicionado Split 3000 Frig Inverter',img:svgAC('%2300c6ff','%230072ff','3000 Frig'),platform:'MercadoLibre',search:'aire acondicionado split 3000 frigorias inverter',asin:null,discount:18,rating:4.5,reviews:2400,freeShipping:false,badges:['sale','top'],desc:'Split frío/calor 3000 frigorías, tecnología Inverter, bajo consumo energético, filtro antibacterial y control remoto WiFi.',specs:[{k:'Capacidad',v:'3000 frigorías'},{k:'Tipo',v:'Split Inverter'},{k:'Función',v:'Frío/Calor'},{k:'Energía',v:'A++'},{k:'Filtro',v:'Antibacterial'},{k:'Control',v:'Remoto + WiFi'}]},
-
-  {id:17,cat:'electro',brand:'Whirlpool',name:'Microondas Whirlpool 30L Digital',img:svgMicrowave('%23f7971e','%23ffd200','Whirlpool 30L'),platform:'MercadoLibre',search:'microondas Whirlpool 30 litros digital',asin:null,discount:22,rating:4.4,reviews:4100,freeShipping:true,badges:['sale','free'],desc:'30 litros, panel digital, 10 niveles de potencia, función grill, descongelado automático y apagado automático.',specs:[{k:'Capacidad',v:'30 litros'},{k:'Potencia',v:'900W'},{k:'Niveles',v:'10 potencias'},{k:'Función',v:'Grill incluido'},{k:'Panel',v:'Digital'},{k:'Garantía',v:'1 año'}]},
-
-  {id:18,cat:'electro',brand:'Xiaomi',name:'Xiaomi Robot Vacuum Mop 2 Pro',img:svgRobot('%23141e30','%23243b55','Mop 2 Pro'),platform:'Amazon',search:'Xiaomi Mi Robot Vacuum Mop 2 Pro',asin:'B09KMKZVGF',discount:30,rating:4.6,reviews:8200,freeShipping:true,badges:['sale','top','free'],desc:'Aspira y friega al mismo tiempo. 3000Pa de succión, mapeado con láser LDS, 3 modos de fregado y batería para 180 minutos.',specs:[{k:'Succión',v:'3000Pa'},{k:'Batería',v:'180 min'},{k:'Navegación',v:'LDS Láser'},{k:'Función',v:'Aspira + Friega'},{k:'App',v:'Mi Home'},{k:'Compatible',v:'Alexa/Google'}]},
-
-  {id:19,cat:'electro',brand:'Philips',name:'Freidora de Aire Philips 4.1L XXL',img:svgAirFryer('%23eb3349','%23f45c43','Philips 4.1L'),platform:'Amazon',search:'Philips air fryer XXL 4.1L',asin:'B07XVPNLXQ',discount:20,rating:4.7,reviews:15400,freeShipping:true,badges:['top','free'],desc:'4.1 litros, tecnología Rapid Air, hasta 90% menos grasa, 7 ajustes preestablecidos, pantalla digital y apagado automático.',specs:[{k:'Capacidad',v:'4.1 litros'},{k:'Potencia',v:'2000W'},{k:'Temperatura',v:'80-200°C'},{k:'Presets',v:'7 programas'},{k:'Panel',v:'Digital'},{k:'Grasa',v:'-90%'}]},
-
-  {id:20,cat:'electro',brand:'Nespresso',name:'Cafetera Nespresso Vertuo Pop+ 5 tazas',img:svgCoffee('%232c3e50','%234ca1af','Nespresso'),platform:'Amazon',search:'Nespresso Vertuo Pop coffee maker',asin:'B0C2NQWZ2J',discount:15,rating:4.7,reviews:9800,freeShipping:true,badges:['new','free'],desc:'5 tamaños de tazas, tecnología Centrifusion, precalentamiento en 30 segundos, depósito de 1.1L y sistema de cápsulas Vertuo.',specs:[{k:'Tazas',v:'5 tamaños'},{k:'Calentamiento',v:'30 seg'},{k:'Depósito',v:'1.1 litros'},{k:'Presión',v:'19 bares'},{k:'Cápsulas',v:'Vertuo'},{k:'Colores',v:'5 opciones'}]},
-
-  // GADGETS CHINA
-  {id:21,cat:'gadgets',brand:'Xiaomi',name:'Xiaomi Band 9 Pulsera Inteligente',img:svgBand('%2311998e','%232d3561','Band 9'),platform:'AliExpress',search:'Xiaomi Smart Band 9',asin:null,discount:35,rating:4.6,reviews:42000,freeShipping:true,badges:['sale','top','free'],desc:'Pantalla AMOLED de 1.62", monitoreo de salud 24/7, 150+ modos deportivos, GPS, batería de 21 días y resistencia 5ATM.',specs:[{k:'Pantalla',v:'1.62" AMOLED'},{k:'Batería',v:'21 días'},{k:'Deportes',v:'150+ modos'},{k:'GPS',v:'Sí'},{k:'Agua',v:'5ATM'},{k:'Sensor',v:'SpO2 + HR'}]},
-
-  {id:22,cat:'gadgets',brand:'Baseus',name:'Auriculares TWS Baseus Bowie MA10 Pro ANC',img:svgEarbuds('%23141e30','%23243b55','Bowie MA10'),platform:'AliExpress',search:'Baseus Bowie MA10 Pro TWS earbuds ANC',asin:null,discount:40,rating:4.5,reviews:28000,freeShipping:true,badges:['sale','top','free'],desc:'ANC activa, drivers de 12mm, 30 horas de batería total, modo transparencia, carga inalámbrica y resistencia IPX5.',specs:[{k:'ANC',v:'Activa -35dB'},{k:'Drivers',v:'12mm'},{k:'Batería',v:'30h total'},{k:'Carga',v:'Inalámbrica'},{k:'Resistencia',v:'IPX5'},{k:'BT',v:'5.3'}]},
-
-  {id:23,cat:'gadgets',brand:'Ugreen',name:'Hub USB-C 7 en 1 Ugreen 4K HDMI',img:svgHub('%230f2027','%23203a43','Ugreen 7en1'),platform:'Amazon',search:'Ugreen USB-C hub 7 in 1 4K HDMI',asin:'B08KCQ6YZX',discount:28,rating:4.7,reviews:18600,freeShipping:true,badges:['sale','top','free'],desc:'HDMI 4K@30Hz, 3x USB-A 3.0, USB-C PD 100W, lector SD/MicroSD. Compatible con MacBook, iPad Pro, laptops.',specs:[{k:'HDMI',v:'4K@30Hz'},{k:'USB-A',v:'3x USB 3.0'},{k:'PD',v:'100W'},{k:'SD',v:'SD + MicroSD'},{k:'Compatible',v:'MacBook/iPad/PC'},{k:'Cable',v:'20cm fijo'}]},
-
-  {id:24,cat:'gadgets',brand:'Govee',name:'Tira LED Govee 10m WiFi RGBIC',img:svgLED('%23f7971e','%23ffd200','Govee 10m'),platform:'Amazon',search:'Govee LED strip lights 10m RGBIC WiFi',asin:'B09D4Y2WR3',discount:32,rating:4.5,reviews:24300,freeShipping:true,badges:['sale','free'],desc:'10 metros, RGBIC (múltiples colores simultáneos), WiFi + Bluetooth, compatible con Alexa y Google Home, música sync.',specs:[{k:'Longitud',v:'10 metros'},{k:'Tipo',v:'RGBIC'},{k:'Control',v:'WiFi + BT + App'},{k:'Compatible',v:'Alexa/Google'},{k:'Música',v:'Sync'},{k:'Corte',v:'Cada 10cm'}]},
-
-  {id:25,cat:'gadgets',brand:'Baseus',name:'Cargador Auto Baseus 65W USB-C PD',img:svgCharger('%23eb3349','%23f45c43','Baseus 65W'),platform:'AliExpress',search:'Baseus 65W car charger USB-C PD',asin:null,discount:38,rating:4.6,reviews:31000,freeShipping:true,badges:['sale','top','free'],desc:'65W total, USB-C PD + USB-A QC4. Carga un MacBook Air, carga rápida para iPhone en 30 minutos.',specs:[{k:'Potencia',v:'65W total'},{k:'USB-C',v:'45W PD'},{k:'USB-A',v:'20W QC4'},{k:'Compatible',v:'MacBook/iPhone/Android'},{k:'Diseño',v:'Ultra compacto'},{k:'LED',v:'Indicador'}]},
-
-  {id:26,cat:'gadgets',brand:'Anker',name:'Anker MagSafe 3 en 1 Cargador Inalámbrico',img:svgCharger('%230f2027','%23203a43','Anker 3en1'),platform:'Amazon',search:'Anker MagSafe 3 in 1 wireless charger',asin:'B0BVC4K9QM',discount:22,rating:4.6,reviews:12400,freeShipping:true,badges:['new','free'],desc:'Cargá iPhone (MagSafe 15W), Apple Watch y AirPods al mismo tiempo. Diseño plegable, cable USB-C incluido.',specs:[{k:'iPhone',v:'MagSafe 15W'},{k:'Apple Watch',v:'Fast Charge'},{k:'AirPods',v:'5W Qi'},{k:'Diseño',v:'Plegable'},{k:'Cable',v:'USB-C 1.5m'},{k:'Compatible',v:'iPhone 12+'}]},
-
-  {id:27,cat:'gadgets',brand:'Xiaomi',name:'Xiaomi Mi Temperature & Humidity Monitor',img:svgBand('%2300b09b','%2396c93d','Mi Temp'),platform:'AliExpress',search:'Xiaomi Mi Temperature Humidity Monitor',asin:null,discount:45,rating:4.5,reviews:56000,freeShipping:true,badges:['sale','top','free'],desc:'Monitoreo de temperatura y humedad en tiempo real, pantalla digital, registro de datos, alertas y compatible con Mi Home.',specs:[{k:'Sensor',v:'Temp + Humedad'},{k:'Precisión',v:'±0.3°C'},{k:'Pantalla',v:'LCD digital'},{k:'App',v:'Mi Home'},{k:'Batería',v:'AAA x2'},{k:'Rango',v:'-9.9 a 60°C'}]},
-
   {id:28,cat:'gadgets',brand:'Ugreen',name:'Powerbank Anker 20000mAh USB-C 20W',img:svgPowerbank('%23141e30','%23243b55','20000mAh'),platform:'Amazon',search:'Anker 20000mAh power bank USB-C',asin:'B09VPHVT2Z',discount:20,rating:4.7,reviews:14200,freeShipping:true,badges:['sale','free'],desc:'20000mAh, 2x USB-C + 2x USB-A, carga hasta 3 dispositivos. 20W de carga rápida. Carga un iPhone 15 más de 4 veces.',specs:[{k:'Capacidad',v:'20000mAh'},{k:'Puertos',v:'2 USB-C + 2 USB-A'},{k:'Carga',v:'20W PD'},{k:'Peso',v:'440g'},{k:'Ciclos',v:'+500'},{k:'Compatible',v:'Todos los dispositivos'}]},
 
   // AUDIO
   {id:29,cat:'audio',brand:'Sony',name:'Sony WH-1000XM5 Noise Cancelling',img:'https://m.media-amazon.com/images/I/61vJtKbAssL._AC_SL1500_.jpg',platform:'Amazon',search:'Sony WH-1000XM5 headphones',asin:'B09XS7JWHH',discount:30,rating:4.9,reviews:12450,freeShipping:true,badges:['sale','top','free'],desc:'Los mejores auriculares del mercado. Cancelación de ruido líder, 30 horas de batería, audio Hi-Res y diseño ultraliviano.',specs:[{k:'ANC',v:'Industry Leading'},{k:'Batería',v:'30 horas'},{k:'BT',v:'5.2'},{k:'Drivers',v:'30mm'},{k:'Plegable',v:'No'},{k:'Peso',v:'250g'}]},
 
-  {id:30,cat:'audio',brand:'JBL',name:'JBL Tune 770NC Inalámbrico ANC',img:svgAudio('%23f7971e','%23ffd200','JBL 770NC'),platform:'Amazon',search:'JBL Tune 770NC wireless headphones',asin:'B0BWXP6BTK',discount:25,rating:4.4,reviews:4300,freeShipping:true,badges:['sale'],desc:'Cancelación de ruido adaptable, 70 horas de batería, sonido JBL Pure Bass, plegable y disponible en varios colores.',specs:[{k:'ANC',v:'Adaptable'},{k:'Batería',v:'70 horas'},{k:'Drivers',v:'40mm'},{k:'BT',v:'5.3'},{k:'Plegable',v:'Sí'},{k:'Peso',v:'221g'}]},
-
-  {id:31,cat:'audio',brand:'Apple',name:'AirPods Pro 2ª Gen USB-C',img:svgEarbuds('%23636e72','%232d3436','AirPods Pro'),platform:'Amazon',search:'AirPods Pro 2nd generation USB-C',asin:'B0D1XD1ZV3',discount:15,rating:4.8,reviews:9800,freeShipping:true,badges:['top','free'],desc:'Chip H2, ANC 2x más potente, audio espacial con seguimiento dinámico de cabeza, IPX4 y carga USB-C o MagSafe.',specs:[{k:'Chip',v:'H2'},{k:'ANC',v:'2x mejor'},{k:'Batería',v:'30h total'},{k:'Carga',v:'USB-C/MagSafe'},{k:'Resistencia',v:'IPX4'},{k:'Compatible',v:'iPhone/iPad/Mac'}]},
-
   {id:32,cat:'audio',brand:'Amazon',name:'Echo Dot 5ª Gen Altavoz Alexa',img:svgSpeaker('%230f2027','%23203a43','Echo Dot 5'),platform:'Amazon',search:'Echo Dot 5th generation Alexa',asin:'B09B8RVKGW',discount:25,rating:4.5,reviews:34500,freeShipping:true,badges:['sale','free'],desc:'Sonido mejorado con bajo potente. Controlá tu hogar con la voz, escuchá música y pedile lo que necesites a Alexa.',specs:[{k:'Altavoz',v:'1.73" frontal'},{k:'WiFi',v:'2.4/5GHz'},{k:'Protocolo',v:'Zigbee + Matter'},{k:'Asistente',v:'Alexa'},{k:'Colores',v:'Antracita/Blanco'},{k:'Alim.',v:'Cable 15W'}]},
 
   // GAMING
   {id:33,cat:'gaming',brand:'Sony',name:'PlayStation 5 Slim Digital Edition',img:'https://m.media-amazon.com/images/I/616X8zng9wS._AC_SL1500_.jpg',platform:'Amazon',search:'PlayStation 5 Slim Digital Edition',asin:'B0CL5KNB9M',discount:15,rating:4.9,reviews:23100,freeShipping:true,badges:['top','free'],desc:'La consola más poderosa de Sony. SSD de 1TB, ray-tracing, hasta 120fps y DualSense incluido.',specs:[{k:'CPU',v:'AMD Zen 2 8-core'},{k:'GPU',v:'10.28 TFLOPS'},{k:'RAM',v:'16GB GDDR6'},{k:'SSD',v:'1TB'},{k:'Resolución',v:'Hasta 8K'},{k:'FPS',v:'Hasta 120fps'}]},
-
-  {id:34,cat:'gaming',brand:'Nintendo',name:'Nintendo Switch OLED Blanca',img:svgConsole('%23e81416','%23ffa500','Switch OLED'),platform:'Amazon',search:'Nintendo Switch OLED White',asin:'B098RL6SBJ',discount:10,rating:4.8,reviews:18700,freeShipping:true,badges:['top'],desc:'Pantalla OLED de 7", base con puerto LAN integrado, 64GB de memoria interna y batería de 4.5 a 9 horas.',specs:[{k:'Pantalla',v:'7" OLED'},{k:'Almac.',v:'64GB'},{k:'Batería',v:'4.5–9h'},{k:'Modos',v:'TV/Mesa/Portátil'},{k:'WiFi',v:'802.11ac'},{k:'USB',v:'USB-C'}]},
-
-  {id:35,cat:'gaming',brand:'Razer',name:'Razer DeathAdder V3 Mouse Gaming',img:svgHub('%23141e30','%23243b55','DeathAdder V3'),platform:'Amazon',search:'Razer DeathAdder V3 gaming mouse',asin:'B0B6SMTBBD',discount:25,rating:4.7,reviews:7200,freeShipping:true,badges:['sale'],desc:'Sensor Focus Pro 30K DPI, 59g ultraliviano, interruptores ópticos de 90M clicks, cable SpeedFlex y polling 8000Hz.',specs:[{k:'Sensor',v:'Focus Pro 30K'},{k:'Peso',v:'59g'},{k:'Botones',v:'5 program.'},{k:'Polling',v:'8000Hz'},{k:'Cable',v:'SpeedFlex 1.8m'},{k:'RGB',v:'Chroma'}]},
-
-  // SMART HOME
-  {id:36,cat:'hogar',brand:'TP-Link',name:'Cámara IP Tapo C220 2K QHD WiFi',img:svgCamera('%230f2027','%23203a43','Tapo C220'),platform:'Amazon',search:'TP-Link Tapo C220 2K security camera',asin:'B0BY8NLC1L',discount:20,rating:4.6,reviews:8900,freeShipping:true,badges:['new','free'],desc:'Resolución 2K QHD, visión nocturna a color, detección de movimiento IA, seguimiento automático y almacenamiento local + nube.',specs:[{k:'Resolución',v:'2K QHD'},{k:'Visión noct.',v:'Color'},{k:'IA',v:'Detección personas'},{k:'Almac.',v:'Local + Nube'},{k:'App',v:'Tapo'},{k:'Compatible',v:'Alexa/Google'}]},
-
-  {id:37,cat:'hogar',brand:'TP-Link',name:'Router WiFi 6 TP-Link AX3000',img:svgRouter('%230f2027','%23203a43','AX3000'),platform:'Amazon',search:'TP-Link Archer AX3000 WiFi 6 router',asin:'B08H6SLHX9',discount:18,rating:4.6,reviews:12300,freeShipping:true,badges:['top','free'],desc:'WiFi 6, velocidad hasta 3Gbps, cobertura de 200m², 4 antenas de alto desempeño, MU-MIMO y gestión parental.',specs:[{k:'Estándar',v:'WiFi 6'},{k:'Velocidad',v:'3000 Mbps'},{k:'Cobertura',v:'200 m²'},{k:'Antenas',v:'4 externas'},{k:'MU-MIMO',v:'4x4'},{k:'App',v:'Tether'}]},
-
-  {id:38,cat:'hogar',brand:'Govee',name:'Tira LED Govee Neon Flex 3m',img:svgLED('%23f7971e','%23ffd200','Neon Flex 3m'),platform:'Amazon',search:'Govee Neon Flex LED corner floor lamp',asin:'B0BY97CJBY',discount:22,rating:4.4,reviews:7600,freeShipping:true,badges:['new'],desc:'Neón flexible 3 metros, 16 millones colores RGBIC, sync con música, compatible con Alexa y Google Home.',specs:[{k:'Longitud',v:'3 metros'},{k:'Tipo',v:'RGBIC Neón'},{k:'Colores',v:'16 millones'},{k:'Control',v:'App + Voz'},{k:'Música',v:'Sync'},{k:'Compatible',v:'Alexa/Google'}]},
-
-  {id:39,cat:'hogar',brand:'Xiaomi',name:'Xiaomi Smart Bulb Essential Color E27',img:svgLED('%2300b09b','%2396c93d','Smart Bulb'),platform:'Amazon',search:'Xiaomi Smart Bulb Essential Color E27',asin:'B09KQKLNRK',discount:30,rating:4.5,reviews:22400,freeShipping:true,badges:['sale','top','free'],desc:'Bombilla inteligente E27, 16 millones de colores, WiFi, compatible con Alexa y Google. Sin hub requerido.',specs:[{k:'Casquillo',v:'E27'},{k:'Potencia',v:'9W (= 60W)'},{k:'Colores',v:'16 millones'},{k:'WiFi',v:'2.4GHz'},{k:'Hub',v:'No necesario'},{k:'Compatible',v:'Alexa/Google/Mi'}]},
-
-  {id:40,cat:'hogar',brand:'Amazon',name:'Echo Show 5 3ª Gen Pantalla Smart',img:svgSpeaker('%23141e30','%23243b55','Echo Show 5'),platform:'Amazon',search:'Echo Show 5 3rd generation',asin:'B09B2SFSLS',discount:20,rating:4.6,reviews:28000,freeShipping:true,badges:['sale','free'],desc:'Pantalla de 5.5", cámara de 2MP, Alexa integrada, video llamadas, controla dispositivos smart home con la voz.',specs:[{k:'Pantalla',v:'5.5" HD'},{k:'Cámara',v:'2MP'},{k:'Asistente',v:'Alexa'},{k:'Video',v:'Llamadas'},{k:'Smart Home',v:'Hub integrado'},{k:'Sonido',v:'Sonido mejorado'}]},
-
-  // ACCESORIOS
-  {id:41,cat:'accesorios',brand:'Anker',name:'Cargador Anker 65W GaN 3 puertos',img:svgCharger('%230f2027','%23203a43','Anker 65W'),platform:'Amazon',search:'Anker 65W GaN charger 3 ports',asin:'B09C69CLKZ',discount:24,rating:4.7,reviews:18400,freeShipping:true,badges:['sale','top','free'],desc:'Tecnología GaN. 2x USB-C + 1x USB-A. Cargá laptop, celular y tablet al mismo tiempo. Compatible MacBook, iPhone, Android.',specs:[{k:'Potencia',v:'65W total'},{k:'Puertos',v:'2 USB-C + 1 USB-A'},{k:'Tecnología',v:'GaN II'},{k:'Compatible',v:'MacBook/iPhone/Android'},{k:'Peso',v:'130g'},{k:'Voltaje',v:'100-240V'}]},
-
-  {id:42,cat:'accesorios',brand:'Belkin',name:'Vidrio Templado Belkin iPhone 15/14',img:svgPhone('%23636e72','%232d3436','Belkin Glass'),platform:'Amazon',search:'Belkin screen protector iPhone 15',asin:'B0CBYJ2YWX',discount:30,rating:4.6,reviews:8900,freeShipping:true,badges:['sale'],desc:'Vidrio templado para iPhone 15/14. Instalación sin burbujas, 99% transparencia y protección contra caídas.',specs:[{k:'Material',v:'Vidrio templado'},{k:'Dureza',v:'9H'},{k:'Compatible',v:'iPhone 15/14/13'},{k:'Transparencia',v:'99%'},{k:'Pack',v:'3 unidades'},{k:'Garantía',v:'2 años'}]},
-
-  {id:43,cat:'accesorios',brand:'Ugreen',name:'Hub USB-C Ugreen 100W PD MacBook',img:svgHub('%23f7971e','%23ffd200','Ugreen 100W'),platform:'Amazon',search:'Ugreen USB-C hub 100W PD MacBook',asin:'B08C4SLWF1',discount:22,rating:4.7,reviews:9600,freeShipping:true,badges:['sale','free'],desc:'USB-C PD 100W, HDMI 4K, 3x USB-A, lector SD. Perfecto para MacBook Air/Pro e iPad Pro.',specs:[{k:'PD',v:'100W pass-through'},{k:'HDMI',v:'4K@30Hz'},{k:'USB-A',v:'3x USB 3.0'},{k:'SD',v:'SD + MicroSD'},{k:'Compatible',v:'MacBook/iPad/PC'},{k:'Cable',v:'15cm'}]},
-
-  // SMARTWATCHES
-  {id:44,cat:'smartwatch',brand:'Apple',name:'Apple Watch Series 10 GPS 42mm',img:svgWatch('%23636e72','%232d3436','Series 10'),platform:'Amazon',search:'Apple Watch Series 10 GPS 42mm',asin:'B0D6VLGNS5',discount:8,rating:4.8,reviews:9800,freeShipping:true,badges:['new','top','free'],desc:'El Apple Watch más delgado. Pantalla siempre activa, detección de accidentes, ECG, GPS dual frecuencia.',specs:[{k:'Pantalla',v:'LTPO OLED Always-On'},{k:'Chip',v:'S10 SiP'},{k:'Batería',v:'18 horas'},{k:'GPS',v:'Dual-freq'},{k:'Agua',v:'50m'},{k:'WatchOS',v:'11'}]},
 
   {id:45,cat:'smartwatch',brand:'Samsung',name:'Samsung Galaxy Watch 7 44mm',img:svgWatch('%230f2027','%23203a43','Watch 7'),platform:'MercadoLibre',search:'Samsung Galaxy Watch 7 44mm',asin:null,discount:14,rating:4.6,reviews:5400,freeShipping:true,badges:['new'],desc:'Sensor BioActive de nueva generación, Wear OS 5, batería de 40 horas y resistencia 5ATM + IP68.',specs:[{k:'CPU',v:'Exynos W1000'},{k:'RAM',v:'2GB'},{k:'Pantalla',v:'1.47" AMOLED'},{k:'Batería',v:'40 horas'},{k:'Resistencia',v:'5ATM+IP68'},{k:'OS',v:'Wear OS 5'}]},
 
@@ -658,30 +570,6 @@ const PRODUCTS = [
    badges:['top','free'],
    desc:'El styler más deseado del mundo. Riza, ondula, alisa y seca al mismo tiempo sin daño extremo. Incluye 6 accesorios. Comisión: 10% = $59 por venta.',
    specs:[{k:'Accesorios',v:'6 incluidos'},{k:'Función',v:'Riza/Ondula/Alisa'},{k:'Motor',v:'Dyson digital'},{k:'Voltaje',v:'Universal'},{k:'Garantía',v:'2 años'}]},
-
-  {id:48,cat:'beauty',brand:'Olaplex',name:'Olaplex Hair Perfector No.3 — Kit Completo',
-   img:svgCoffee('%23c2185b','%23e91e8c','Olaplex Kit'),
-   platform:'Amazon',search:'Olaplex No 3 hair perfector treatment kit',asin:'B00SNM5US4',
-   discount:20,rating:4.6,reviews:89000,freeShipping:true,
-   badges:['top','sale','free'],
-   desc:'El tratamiento capilar más vendido del mundo. Repara el daño desde adentro, fortalece y protege. Más de 89.000 reseñas 5 estrellas.',
-   specs:[{k:'Tipo',v:'Tratamiento reparador'},{k:'Uso',v:'En casa'},{k:'Pelo',v:'Todo tipo'},{k:'Tamaño',v:'100ml'},{k:'Resultados',v:'Desde 1er uso'}]},
-
-  {id:49,cat:'beauty',brand:'La Mer',name:'La Mer Crème de la Mer Moisturizing Cream',
-   img:svgRobot('%230d47a1','%231565c0','La Mer Crème'),
-   platform:'Amazon',search:'La Mer Creme de la Mer moisturizing cream',asin:'B000FGDJ5E',
-   discount:0,rating:4.7,reviews:12400,freeShipping:true,
-   badges:['top','free'],
-   desc:'La crema de lujo más icónica del mundo. Miracle Broth™ que regenera la piel. Precio $190 = $19 de comisión por cada venta.',
-   specs:[{k:'Tamaño',v:'30ml'},{k:'Tipo',v:'Hidratante de lujo'},{k:'Ingrediente',v:'Miracle Broth™'},{k:'Piel',v:'Todo tipo'},{k:'Resultado',v:'Regeneración celular'}]},
-
-  {id:51,cat:'beauty',brand:'Charlotte Tilbury',name:'Charlotte Tilbury Magic Cream Moisturizer',
-   img:svgBand('%23f48fb1','%23e91e8c','Charlotte Cream'),
-   platform:'Amazon',search:'Charlotte Tilbury Magic Cream moisturizer',asin:'B0755TWFHB',
-   discount:0,rating:4.7,reviews:8900,freeShipping:true,
-   badges:['new','free'],
-   desc:'La crema favorita de las celebrities. 8 ingredientes activos que transforman la piel en 4 semanas. Efecto lifting visible.',
-   specs:[{k:'Tamaño',v:'50ml'},{k:'Activos',v:'8 ingredientes'},{k:'Resultado',v:'Lifting en 4 semanas'},{k:'Textura',v:'Rica y cremosa'},{k:'Aroma',v:'Floral suave'}]},
 
   {id:58,cat:'cocina',brand:'Le Creuset',name:'Le Creuset Signature Enameled Cast Iron 5.5Qt',
    img:svgAirFryer('%23c62828','%23d32f2f','Le Creuset 5.5Qt'),
@@ -699,22 +587,6 @@ const PRODUCTS = [
    badges:['top','sale','free'],
    desc:'Las zapatillas más cómodas de Nike. Air Max 270 con la unidad de aire más grande de Nike. Diseño lifestyle premium.',
    specs:[{k:'Suela',v:'Air Max 270'},{k:'Upper',v:'Mesh transpirable'},{k:'Peso',v:'298g'},{k:'Tallas',v:'US 6-15'},{k:'Colores',v:'20+ opciones'}]},
-
-  {id:61,cat:'moda',brand:'The North Face',name:'The North Face Thermoball Eco Jacket',
-   img:svgLaptop('%230d47a1','%231565c0','TNF Thermoball'),
-   platform:'Amazon',search:'The North Face Thermoball Eco jacket men',asin:'B07H5HTMZF',
-   discount:20,rating:4.7,reviews:8900,freeShipping:true,
-   badges:['top','free'],
-   desc:'La campera más versátil de The North Face. Relleno ThermoBall Eco reciclado, impermeable y plegable en su propio bolsillo.',
-   specs:[{k:'Relleno',v:'ThermoBall Eco'},{k:'Resistencia',v:'Impermeable DWR'},{k:'Peso',v:'397g'},{k:'Plegable',v:'Sí'},{k:'Tallas',v:'XS-3XL'}]},
-
-  {id:62,cat:'moda',brand:'Levi\'s',name:'Levi\'s 501 Original Fit Jeans',
-   img:svgTablet('%231565c0','%231976d2','Levis 501'),
-   platform:'Amazon',search:'Levis 501 original fit jeans men',asin:'B000IU3YZI',
-   discount:20,rating:4.5,reviews:34600,freeShipping:true,
-   badges:['top','sale','free'],
-   desc:'El jean más icónico del mundo. Corte recto clásico, tela de denim premium y el estilo que nunca pasa de moda.',
-   specs:[{k:'Corte',v:'Straight/Regular'},{k:'Material',v:'100% Algodón'},{k:'Tiro',v:'Regular'},{k:'Tallas',v:'28-42'},{k:'Colores',v:'15+ opciones'}]},
 
   {id:64,cat:'moda',brand:'Gucci',name:'Gucci GG Supreme Canvas Belt',
    img:svgBand('%23827717','%23f9a825','Gucci Belt'),
