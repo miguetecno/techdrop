@@ -726,7 +726,7 @@ function openModal(id){
   const btn=document.getElementById('modalBuyBtn');
   btn.className='modal-buy '+(p.platform==='Amazon'?'amazon':p.platform==='MercadoLibre'?'ml':'ali');
   btn.innerHTML=`Ver precio real en ${p.platform} →`;
-  btn.onclick=()=>{window.open(affLink(p.platform,p.search,p.asin,p.mllink),'_blank');showToast(`🚀 Abriendo ${p.platform}...`);closeModal();};
+  btn.onclick=()=>{const url=affLink(p.platform,p.search,p.asin,p.mllink);const a=document.createElement('a');a.href=url;a.target='_blank';a.rel='noopener';document.body.appendChild(a);a.click();document.body.removeChild(a);showToast(`🚀 Abriendo ${p.platform}...`);closeModal();};
   document.getElementById('modalOverlay').classList.add('open');
   document.body.style.overflow='hidden';
 }
@@ -734,7 +734,8 @@ function closeModal(){document.getElementById('modalOverlay').classList.remove('
 
 function goStore(id){
   const p=PRODUCTS.find(x=>x.id===id);
-  window.open(affLink(p.platform,p.search,p.asin,p.mllink),'_blank');
+  const _ul=affLink(p.platform,p.search,p.asin,p.mllink);
+  const _al=document.createElement('a');_al.href=_ul;_al.target='_blank';_al.rel='noopener';document.body.appendChild(_al);_al.click();document.body.removeChild(_al);
   showToast(`🚀 Abriendo ${p.platform}...`);
   if(!cart.find(x=>x.id===id)){cart.push({...p});updateCart();}
 }
